@@ -1,25 +1,126 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NPq-73-wOD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="720"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TNt-AQ-dRh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="720"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hfu-88-hz2">
+                                        <rect key="frame" x="8" y="201" width="160" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9t2-zn-eQR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Psaaword" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JyS-Rb-YXQ">
+                                        <rect key="frame" x="8" y="247" width="160" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5Wv-Ns-L1d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeL-1d-cXq">
+                                        <rect key="frame" x="126" y="345" width="68" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4rU-DE-cxk"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJm-rA-eWv">
+                                        <rect key="frame" x="126" y="398" width="68" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="TZx-dM-rX0"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KJm-rA-eWv" secondAttribute="trailing" constant="126" id="32i-Ch-5Go"/>
+                                    <constraint firstItem="Hfu-88-hz2" firstAttribute="top" secondItem="TNt-AQ-dRh" secondAttribute="top" constant="201" id="7l0-Wv-fXx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hfu-88-hz2" secondAttribute="trailing" constant="152" id="FMN-mj-3FX"/>
+                                    <constraint firstAttribute="trailing" secondItem="OeL-1d-cXq" secondAttribute="trailing" constant="126" id="NkL-bb-0lb"/>
+                                    <constraint firstItem="OeL-1d-cXq" firstAttribute="top" secondItem="JyS-Rb-YXQ" secondAttribute="bottom" constant="68" id="PWl-72-wDh"/>
+                                    <constraint firstAttribute="trailing" secondItem="JyS-Rb-YXQ" secondAttribute="trailing" constant="152" id="RrX-cF-1ci"/>
+                                    <constraint firstItem="JyS-Rb-YXQ" firstAttribute="leading" secondItem="TNt-AQ-dRh" secondAttribute="leading" constant="8" id="hVt-VE-lx0"/>
+                                    <constraint firstItem="JyS-Rb-YXQ" firstAttribute="top" secondItem="Hfu-88-hz2" secondAttribute="bottom" constant="16" id="lec-h7-EMB"/>
+                                    <constraint firstItem="Hfu-88-hz2" firstAttribute="leading" secondItem="TNt-AQ-dRh" secondAttribute="leading" constant="8" id="mSE-f4-IBA"/>
+                                    <constraint firstItem="OeL-1d-cXq" firstAttribute="leading" secondItem="TNt-AQ-dRh" secondAttribute="leading" constant="126" id="pGg-Go-1RG"/>
+                                    <constraint firstItem="KJm-rA-eWv" firstAttribute="leading" secondItem="TNt-AQ-dRh" secondAttribute="leading" constant="126" id="ufJ-gT-tzm"/>
+                                    <constraint firstItem="KJm-rA-eWv" firstAttribute="top" secondItem="OeL-1d-cXq" secondAttribute="bottom" constant="23" id="z59-8F-jr5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="0EP-sK-nI8"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNt-AQ-dRh" secondAttribute="bottom" id="JTQ-Os-t2p"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="PMC-Az-6yb"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="S2L-Ss-wa7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNt-AQ-dRh" secondAttribute="bottom" id="UWb-jl-jtv"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="apm-QU-qxe"/>
+                            <constraint firstAttribute="trailing" secondItem="TNt-AQ-dRh" secondAttribute="trailing" id="c0L-sf-apT"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hde-3m-Jcx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNt-AQ-dRh" secondAttribute="bottom" id="jkz-s6-t9o"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="pRQ-a8-U9R"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="scf-th-m96"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="sou-kV-74R"/>
+                            <constraint firstItem="TNt-AQ-dRh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="xPB-Dz-CAa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNt-AQ-dRh" secondAttribute="trailing" id="xfb-3F-fh9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNt-AQ-dRh" secondAttribute="trailing" constant="-16" id="xu2-Hq-1aq"/>
+                            <constraint firstAttribute="trailing" secondItem="TNt-AQ-dRh" secondAttribute="trailing" id="z2i-aG-gOA"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BJD-Yp-V5W"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="720"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="678" y="288"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MHD-B7-fyd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NPq-73-wOD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ur5-4M-pcA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="eK1-cN-9Ss"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T21-fM-qjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="288"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
