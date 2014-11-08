@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
+@property(nonatomic,strong)IBOutlet UITextField *emailTextField;
+-(void)textFieldDidBeginEditing:(UITextField *) emailTextField;
+
 
 
 @end
