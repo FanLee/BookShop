@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="exp-OA-SDN">
             <objects>
-                <viewController id="NUd-Qr-gbp" sceneMemberID="viewController">
+                <viewController id="NUd-Qr-gbp" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ER2-ET-rbF"/>
                         <viewControllerLayoutGuide type="bottom" id="L5e-zg-9Fd"/>
@@ -19,11 +19,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUY-ib-rsj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cQ-aC-7AK">
-                                        <rect key="frame" x="8" y="139" width="152" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-7d-bwl">
                                         <rect key="frame" x="8" y="182" width="152" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -49,6 +44,11 @@
                                             <segue destination="ftX-H2-CmM" kind="push" id="rEA-QV-Xh8"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cQ-aC-7AK">
+                                        <rect key="frame" x="8" y="144" width="152" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2Tl-7d-bwl" firstAttribute="top" secondItem="2cQ-aC-7AK" secondAttribute="bottom" constant="13" id="2Qc-4l-Wo3"/>
@@ -69,6 +69,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="tLn-kI-ZUA"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="2cQ-aC-7AK" id="BLw-GT-ClX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YB8-k0-VI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
