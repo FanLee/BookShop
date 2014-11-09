@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="exp-OA-SDN">
             <objects>
-                <viewController id="NUd-Qr-gbp" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="NUd-Qr-gbp" customClass="BSSignInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ER2-ET-rbF"/>
                         <viewControllerLayoutGuide type="bottom" id="L5e-zg-9Fd"/>
@@ -16,16 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUY-ib-rsj">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUY-ib-rsj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-7d-bwl">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-7d-bwl">
                                         <rect key="frame" x="8" y="182" width="152" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPr-yL-1b9">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPr-yL-1b9">
                                         <rect key="frame" x="121" y="263" width="78" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Sign in">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +35,7 @@
                                             <segue destination="ulu-DZ-JHA" kind="push" id="hWk-gf-zYu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvf-lM-DeO">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvf-lM-DeO">
                                         <rect key="frame" x="121" y="301" width="78" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Sign up">
@@ -44,26 +45,12 @@
                                             <segue destination="ftX-H2-CmM" kind="push" id="rEA-QV-Xh8"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cQ-aC-7AK">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cQ-aC-7AK">
                                         <rect key="frame" x="8" y="144" width="152" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="2Tl-7d-bwl" firstAttribute="top" secondItem="2cQ-aC-7AK" secondAttribute="bottom" constant="13" id="2Qc-4l-Wo3"/>
-                                    <constraint firstItem="Tvf-lM-DeO" firstAttribute="leading" secondItem="qUY-ib-rsj" secondAttribute="leading" constant="121" id="8Vr-R7-Y05"/>
-                                    <constraint firstItem="2Tl-7d-bwl" firstAttribute="leading" secondItem="qUY-ib-rsj" secondAttribute="leading" constant="8" id="DgW-sz-gXP"/>
-                                    <constraint firstItem="2cQ-aC-7AK" firstAttribute="top" secondItem="qUY-ib-rsj" secondAttribute="top" constant="139" id="JkU-Ri-cZc"/>
-                                    <constraint firstAttribute="trailing" secondItem="2cQ-aC-7AK" secondAttribute="trailing" constant="160" id="Npu-wh-rP3"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tvf-lM-DeO" secondAttribute="trailing" constant="121" id="Op3-4E-Kjh"/>
-                                    <constraint firstItem="2cQ-aC-7AK" firstAttribute="leading" secondItem="qUY-ib-rsj" secondAttribute="leading" constant="8" id="c5K-fH-Vdj"/>
-                                    <constraint firstAttribute="trailing" secondItem="LPr-yL-1b9" secondAttribute="trailing" constant="121" id="ceA-hw-3FG"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Tl-7d-bwl" secondAttribute="trailing" constant="160" id="eQe-90-Cuh"/>
-                                    <constraint firstItem="Tvf-lM-DeO" firstAttribute="top" secondItem="LPr-yL-1b9" secondAttribute="bottom" constant="8" id="jNR-O5-5Cz"/>
-                                    <constraint firstItem="LPr-yL-1b9" firstAttribute="top" secondItem="2Tl-7d-bwl" secondAttribute="bottom" constant="51" id="lSQ-pc-EWg"/>
-                                    <constraint firstItem="LPr-yL-1b9" firstAttribute="leading" secondItem="qUY-ib-rsj" secondAttribute="leading" constant="121" id="p4x-JJ-eEX"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,6 +58,8 @@
                     <navigationItem key="navigationItem" id="tLn-kI-ZUA"/>
                     <connections>
                         <outlet property="emailTextField" destination="2cQ-aC-7AK" id="BLw-GT-ClX"/>
+                        <outlet property="scrollView" destination="qUY-ib-rsj" id="j2h-t2-LMH"/>
+                        <outlet property="signInButton" destination="LPr-yL-1b9" id="2wE-I8-b0I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YB8-k0-VI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,6 +248,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xY2-Fz-nx2"/>
+        <segue reference="hWk-gf-zYu"/>
     </inferredMetricsTieBreakers>
 </document>
