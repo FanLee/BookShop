@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BSSignInViewController.h
 //  BookShop
 //
 //  Created by FanLee on 05.11.14.
@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface BSSignInViewController : UIViewController <UITextFieldDelegate>
 @property(nonatomic,strong)IBOutlet UITextField *emailTextField;
--(void)textFieldDidBeginEditing:(UITextField *) emailTextField;
-
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *signInButton;
 
 @end
 
