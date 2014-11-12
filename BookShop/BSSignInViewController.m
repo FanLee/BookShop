@@ -19,37 +19,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.emailTextField.delegate=self;
-    self.signInButton.layer.borderWidth = 1;
-    self.signInButton.layer.borderColor = [UIColor blackColor].CGColor;
-    self.signInButton.layer.cornerRadius = 5.0f;
+    _emailTextField.delegate=self;
+    _passTextField.delegate=self;
+    _signInButton.layer.borderWidth = 1;
+    _signInButton.layer.borderColor = [UIColor blackColor].CGColor;
+    _signInButton.layer.cornerRadius = 5.0f;
+    self.navigationController.navigationBar.hidden = YES;
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)textFieldDidBeginEditing:(UITextField *)emailTextField {
-    [self animatedTextField: emailTextField up:YES];
-}
-
-- (IBAction)em:(id)sender {
-}
-
--(void)animatedTextField:(UITextField*)animatedTextField up:(BOOL) up
-{
-    const int movementDistance = 100;
-    const float movementDuration = 0.3f;
     
-    int movement = (up ? -movementDistance : movementDistance);
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    [UIView beginAnimations:@"anim" context:nil];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    [UIView setAnimationDuration:movementDuration];
-    self.view.frame=CGRectOffset(self.view.frame, 0, movement);
-    [UIView commitAnimations];
+    [_scrollView setContentOffset:CGPointMake(0,150)animated:YES];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    [_scrollView setContentInset:UIEdgeInsetsMake(-150,0,0,0)];
+  
+}
+
+
+- (IBAction)signInAction:(id)sender {
+    [_emailTextField resignFirstResponder];
+    [_passTextField resignFirstResponder];
+    [_scrollView setContentInset:UIEdgeInsetsMake(60, 0, 0, 0)];
 }
 
 @end
