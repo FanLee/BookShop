@@ -9,6 +9,9 @@
 #import "BSSignUpTableViewController.h"
 
 @interface BSSignUpTableViewController ()
+{
+    
+}
 
 @end
 
@@ -16,37 +19,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
+    _ageArray = [NSArray arrayWithObjects: @"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];
+    NSInteger ageCount = [_ageArray count];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
-    
 }
-
-
-
-#pragma mark - Table view data source
-
+    
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return 8;
 }
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)genderPicker{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)genderPicker numberOfRowsInComponent:(NSInteger)component{
+    return 2;
+}
+- (NSString *)pickerView:(UIPickerView *)genderPicker titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if (component==0&&row==0) {
+        return @"Male";
+    }else {
+        
+    return @"Female";
+    }
+    
+}
+
+/*-(NSInteger)pickerView:(UIPickerView *)agePicker numberOfRowsInComponent:(NSInteger)component{
+    return [_ageArray count];
+}*/
+
+/*-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 15;
+}*/
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    
     
     return cell;
 }
