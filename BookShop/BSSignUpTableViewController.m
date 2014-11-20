@@ -19,12 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _ageArray = [NSArray arrayWithObjects: @"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];
-    NSInteger ageCount = [_ageArray count];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
     
 }
     
@@ -38,13 +38,14 @@
     return 8;
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)genderPicker{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)genderPicker numberOfRowsInComponent:(NSInteger)component{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return 2;
 }
+
 - (NSString *)pickerView:(UIPickerView *)genderPicker titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if (component==0&&row==0) {
         return @"Male";
@@ -55,13 +56,15 @@
     
 }
 
+
+
 /*-(NSInteger)pickerView:(UIPickerView *)agePicker numberOfRowsInComponent:(NSInteger)component{
     return [_ageArray count];
 }*/
 
-/*-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 15;
-}*/
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 17;
+}
 
 
 
