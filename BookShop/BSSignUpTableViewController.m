@@ -9,9 +9,6 @@
 #import "BSSignUpTableViewController.h"
 
 @interface BSSignUpTableViewController ()
-{
-    
-}
 
 @end
 
@@ -55,12 +52,6 @@
     }
     
 }
-
-
-
-/*-(NSInteger)pickerView:(UIPickerView *)agePicker numberOfRowsInComponent:(NSInteger)component{
-    return [_ageArray count];
-}*/
 
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     return 17;
