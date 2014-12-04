@@ -36,27 +36,70 @@
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
     return 1;
+    
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    if (pickerView == _genderPicker){
     return 2;
+        
+    }else if(pickerView == _agePicker){
+        return 5;
+    }
+    else return 0;
 }
 
-- (NSString *)pickerView:(UIPickerView *)genderPicker titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if ( pickerView== _genderPicker) {
+        
+    
     if (component==0&&row==0) {
         return @"Male";
     }else {
         
     return @"Female";
-    }
     
+    }
+    }
+    else if (pickerView == _agePicker){
+        if (component==0) {
+            switch (row) {
+                case 0:
+                    return @"18";
+                    break;
+                case 1:
+                    return @"25";
+                    break;
+                case 2:
+                    return @"30";
+                    break;
+                case 3:
+                    return @"40";
+                    break;
+                case 4:
+                    return @"50";
+                    break;
+                    
+            }
+            
+            
+        }
+
+        
+    }
+     return 0;
 }
 
--(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+
+
+/*-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     return 17;
 }
-
+*/
 
 
 /*

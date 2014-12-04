@@ -25,7 +25,7 @@
     _signInButton.layer.borderColor = [UIColor blackColor].CGColor;
     _signInButton.layer.cornerRadius = 5.0f;
     self.navigationController.navigationBar.hidden = YES;
-    
+    //[self textFieldOptions];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,10 +38,16 @@
     [_scrollView setContentOffset:CGPointMake(0,150)animated:YES];
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
+-(void)textFieldOptions{
+    if ([self textFieldShouldEndEditing:(UITextField *)_emailTextField]==YES) {
+        
     
-    [_scrollView setContentInset:UIEdgeInsetsMake(-150,0,0,0)];
-  
+        [_scrollView setContentInset:UIEdgeInsetsMake(-150,0,0,0)];
+    }
+}
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    return YES;
 }
 
 
