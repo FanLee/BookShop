@@ -16,6 +16,8 @@
 		20862C501A0AAF60002FDC34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20862C4E1A0AAF60002FDC34 /* LaunchScreen.xib */; };
 		20862C5C1A0AAF60002FDC34 /* BookShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C5B1A0AAF60002FDC34 /* BookShopTests.m */; };
 		20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */; };
+		20D310221A36DC4500999F7A /* boostorelogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310211A36DC4500999F7A /* boostorelogo.jpg */; };
+		20D310241A36DD0600999F7A /* boostorelogo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310231A36DD0600999F7A /* boostorelogo3.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		20862C5B1A0AAF60002FDC34 /* BookShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookShopTests.m; sourceTree = "<group>"; };
 		20D30FE51A15323000999F7A /* BSSignUpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSignUpTableViewController.h; sourceTree = "<group>"; };
 		20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSignUpTableViewController.m; sourceTree = "<group>"; };
+		20D310211A36DC4500999F7A /* boostorelogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boostorelogo.jpg; sourceTree = "<group>"; };
+		20D310231A36DD0600999F7A /* boostorelogo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boostorelogo3.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				20862C461A0AAF60002FDC34 /* BSSignInViewController.h */,
 				20862C471A0AAF60002FDC34 /* BSSignInViewController.m */,
 				20862C491A0AAF60002FDC34 /* Main.storyboard */,
+				20D310201A36DC4500999F7A /* Resources */,
 				20D30FE51A15323000999F7A /* BSSignUpTableViewController.h */,
 				20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */,
 				20862C4C1A0AAF60002FDC34 /* Images.xcassets */,
@@ -125,6 +130,15 @@
 				20862C5A1A0AAF60002FDC34 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20D310201A36DC4500999F7A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20D310231A36DD0600999F7A /* boostorelogo3.jpg */,
+				20D310211A36DC4500999F7A /* boostorelogo.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +221,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D310241A36DD0600999F7A /* boostorelogo3.jpg in Resources */,
 				20862C4B1A0AAF60002FDC34 /* Main.storyboard in Resources */,
+				20D310221A36DC4500999F7A /* boostorelogo.jpg in Resources */,
 				20862C501A0AAF60002FDC34 /* LaunchScreen.xib in Resources */,
 				20862C4D1A0AAF60002FDC34 /* Images.xcassets in Resources */,
 			);
