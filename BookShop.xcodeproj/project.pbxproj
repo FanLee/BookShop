@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2011A3BA1A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2011A3B91A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m */; };
 		20862C3F1A0AAF60002FDC34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C3E1A0AAF60002FDC34 /* main.m */; };
 		20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C411A0AAF60002FDC34 /* AppDelegate.m */; };
 		20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20862C431A0AAF60002FDC34 /* BookShop.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2011A3B81A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSGenreAndAuthorAccordionViewController.h; path = ../BSGenreAndAuthorAccordionViewController.h; sourceTree = "<group>"; };
+		2011A3B91A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSGenreAndAuthorAccordionViewController.m; path = ../BSGenreAndAuthorAccordionViewController.m; sourceTree = "<group>"; };
 		20862C391A0AAF60002FDC34 /* BookShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20862C3D1A0AAF60002FDC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20862C3E1A0AAF60002FDC34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2011A3BB1A5F20DE0098E3C6 /* AccordionView */ = {
+			isa = PBXGroup;
+			children = (
+				2011A3B81A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.h */,
+				2011A3B91A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m */,
+			);
+			name = AccordionView;
+			sourceTree = "<group>";
+		};
 		20862C301A0AAF60002FDC34 = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +107,13 @@
 				20862C461A0AAF60002FDC34 /* BSSignInViewController.h */,
 				20862C471A0AAF60002FDC34 /* BSSignInViewController.m */,
 				20862C491A0AAF60002FDC34 /* Main.storyboard */,
-				20D310201A36DC4500999F7A /* Resources */,
 				20D30FE51A15323000999F7A /* BSSignUpTableViewController.h */,
 				20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */,
+				2011A3BB1A5F20DE0098E3C6 /* AccordionView */,
 				20862C4C1A0AAF60002FDC34 /* Images.xcassets */,
 				20862C4E1A0AAF60002FDC34 /* LaunchScreen.xib */,
 				20862C431A0AAF60002FDC34 /* BookShop.xcdatamodeld */,
+				20D310201A36DC4500999F7A /* Resources */,
 				20862C3C1A0AAF60002FDC34 /* Supporting Files */,
 			);
 			path = BookShop;
@@ -248,6 +261,7 @@
 				20862C481A0AAF60002FDC34 /* BSSignInViewController.m in Sources */,
 				20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */,
 				20862C3F1A0AAF60002FDC34 /* main.m in Sources */,
+				2011A3BA1A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

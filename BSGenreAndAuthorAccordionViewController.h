@@ -1,13 +1,16 @@
 //
-//  BSGenreAndAuthorAccordionViewController.h
-//  BookShop
+//  ViewController.h
+//  test
 //
-//  Created by FanLee on 08.01.15.
-//  Copyright (c) 2015 Fan. All rights reserved.
+//  Created by Wojtek Siudzinski on 11.02.2012.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#include "AccordionView.h"
 
-@interface BSGenreAndAuthorAccordionViewController : UIViewController
+@interface ViewController : UIViewController {
+    AccordionView *accordion;
+}
 
 @end

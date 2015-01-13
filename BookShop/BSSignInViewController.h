@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (nonatomic,strong) IBOutlet UITextField *passTextField;
-- (IBAction)signInAction:(id)sender;
+-(IBAction)signInAction:(id)sender;
 -(IBAction)backgroundTouched:(id)sender;
 
 
