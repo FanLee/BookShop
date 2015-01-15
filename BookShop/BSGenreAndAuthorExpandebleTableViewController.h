@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface BSGenreAndAuthorExpandebleTableViewController : UITableViewController
+{
+    NSMutableIndexSet *expandedSections;
+}
 
 @end
+
+
+

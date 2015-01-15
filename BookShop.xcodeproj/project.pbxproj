@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2011A3BA1A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2011A3B91A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m */; };
 		20862C3F1A0AAF60002FDC34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C3E1A0AAF60002FDC34 /* main.m */; };
 		20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C411A0AAF60002FDC34 /* AppDelegate.m */; };
 		20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20862C431A0AAF60002FDC34 /* BookShop.xcdatamodeld */; };
@@ -19,6 +18,7 @@
 		20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */; };
 		20D310221A36DC4500999F7A /* boostorelogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310211A36DC4500999F7A /* boostorelogo.jpg */; };
 		20D310241A36DD0600999F7A /* boostorelogo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310231A36DD0600999F7A /* boostorelogo3.jpg */; };
+		20FBEAA61A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAA51A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2011A3B81A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSGenreAndAuthorAccordionViewController.h; path = ../BSGenreAndAuthorAccordionViewController.h; sourceTree = "<group>"; };
-		2011A3B91A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSGenreAndAuthorAccordionViewController.m; path = ../BSGenreAndAuthorAccordionViewController.m; sourceTree = "<group>"; };
 		20862C391A0AAF60002FDC34 /* BookShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20862C3D1A0AAF60002FDC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20862C3E1A0AAF60002FDC34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +50,8 @@
 		20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSignUpTableViewController.m; sourceTree = "<group>"; };
 		20D310211A36DC4500999F7A /* boostorelogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boostorelogo.jpg; sourceTree = "<group>"; };
 		20D310231A36DD0600999F7A /* boostorelogo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boostorelogo3.jpg; sourceTree = "<group>"; };
+		20FBEAA41A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSGenreAndAuthorExpandebleTableViewController.h; sourceTree = "<group>"; };
+		20FBEAA51A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSGenreAndAuthorExpandebleTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +75,8 @@
 		2011A3BB1A5F20DE0098E3C6 /* AccordionView */ = {
 			isa = PBXGroup;
 			children = (
-				2011A3B81A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.h */,
-				2011A3B91A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m */,
+				20FBEAA41A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.h */,
+				20FBEAA51A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m */,
 			);
 			name = AccordionView;
 			sourceTree = "<group>";
@@ -257,11 +257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */,
+				20FBEAA61A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m in Sources */,
 				20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */,
 				20862C481A0AAF60002FDC34 /* BSSignInViewController.m in Sources */,
 				20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */,
 				20862C3F1A0AAF60002FDC34 /* main.m in Sources */,
-				2011A3BA1A5F1AC00098E3C6 /* BSGenreAndAuthorAccordionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -394,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

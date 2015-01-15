@@ -8,93 +8,141 @@
 
 #import "BSGenreAndAuthorExpandebleTableViewController.h"
 
-@interface BSGenreAndAuthorExpandebleTableViewController ()
-
-@end
-
 @implementation BSGenreAndAuthorExpandebleTableViewController
+enum {
+    header1,
+    header2,
+    header3,
+    row1,
+    row2,
+};
 
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    if (!expandedSections)
+    {
+        expandedSections = [[NSMutableIndexSet alloc] init];
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canCollapseSection:(NSInteger)section
+{
+    if (section>=0) return YES;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    return NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if ([self tableView:tableView canCollapseSection:section])
+    {
+        if ([expandedSections containsIndex:section])
+        {
+            return 3; // return rows when expanded
+        }
+    }
+    
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+   
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
     // Configure the cell...
     
+    if ([self tableView:tableView canCollapseSection:indexPath.section] && indexPath.row == 0) {
+        switch (indexPath.section) {
+            case header1: cell.textLabel.text=@"Horors";return cell;
+            case header2: cell.textLabel.text=@"Detectives";return cell;
+            case header3: cell.textLabel.text=@"Adventures"; return cell;
+        }            // first row
+                
+    } else {
+        if(indexPath.section==header1){
+        // all other rows
+            cell.textLabel.text = @"Some Detail1";
+            cell.accessoryView = nil;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        } else if (indexPath.section==header2){
+            cell.textLabel.text = @"Some Detail2";
+            cell.accessoryView = nil;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        } else {
+            cell.textLabel.text = @"Some Detail3";
+            cell.accessoryView = nil;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+        }
+    }
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self tableView:tableView canCollapseSection:indexPath.section])
+    {
+        if (!indexPath.row)
+        {
+            // only first row toggles exapand/collapse
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            
+            NSInteger section = indexPath.section;
+            BOOL currentlyExpanded = [expandedSections containsIndex:section];
+            NSInteger rows;
+            
+            NSMutableArray *tmpArray = [NSMutableArray array];
+            
+            if (currentlyExpanded)
+            {
+                rows = [self tableView:tableView numberOfRowsInSection:section];
+                [expandedSections removeIndex:section];
+                
+            }
+            else
+            {
+                [expandedSections addIndex:section];
+                rows = [self tableView:tableView numberOfRowsInSection:section];
+            }
+            
+            for (int i=1; i<rows; i++)
+            {
+                NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:i
+                                                               inSection:section];
+                [tmpArray addObject:tmpIndexPath];
+            }
+            
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            
+            if (currentlyExpanded)
+            {
+                [tableView deleteRowsAtIndexPaths:tmpArray
+                                 withRowAnimation:UITableViewRowAnimationTop];
+                
+            }
+            else
+            {
+                [tableView insertRowsAtIndexPaths:tmpArray
+                                 withRowAnimation:UITableViewRowAnimationTop];
+                
+            }
+        }
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
+
