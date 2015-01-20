@@ -16,9 +16,13 @@
 		20862C501A0AAF60002FDC34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20862C4E1A0AAF60002FDC34 /* LaunchScreen.xib */; };
 		20862C5C1A0AAF60002FDC34 /* BookShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C5B1A0AAF60002FDC34 /* BookShopTests.m */; };
 		20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */; };
-		20D310221A36DC4500999F7A /* boostorelogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310211A36DC4500999F7A /* boostorelogo.jpg */; };
-		20D310241A36DD0600999F7A /* boostorelogo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310231A36DD0600999F7A /* boostorelogo3.jpg */; };
+		20D310221A36DC4500999F7A /* bookstorelogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310211A36DC4500999F7A /* bookstorelogo.jpg */; };
+		20D310241A36DD0600999F7A /* bookstorelogo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D310231A36DD0600999F7A /* bookstorelogo3.jpg */; };
 		20FBEAA61A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAA51A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m */; };
+		20FBEAB81A6AB4BC0053B304 /* InactiveStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FBEAB71A6AB4BC0053B304 /* InactiveStar.png */; };
+		20FBEABB1A6C332B0053B304 /* BSAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEABA1A6C332B0053B304 /* BSAuthorViewController.m */; };
+		20FBEABE1A6C416D0053B304 /* BSVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEABD1A6C416D0053B304 /* BSVoteViewController.m */; };
+		20FBEAC01A6D216A0053B304 /* ActiveStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FBEABF1A6D216A0053B304 /* ActiveStar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +52,16 @@
 		20862C5B1A0AAF60002FDC34 /* BookShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookShopTests.m; sourceTree = "<group>"; };
 		20D30FE51A15323000999F7A /* BSSignUpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSignUpTableViewController.h; sourceTree = "<group>"; };
 		20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSignUpTableViewController.m; sourceTree = "<group>"; };
-		20D310211A36DC4500999F7A /* boostorelogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boostorelogo.jpg; sourceTree = "<group>"; };
-		20D310231A36DD0600999F7A /* boostorelogo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boostorelogo3.jpg; sourceTree = "<group>"; };
+		20D310211A36DC4500999F7A /* bookstorelogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookstorelogo.jpg; sourceTree = "<group>"; };
+		20D310231A36DD0600999F7A /* bookstorelogo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookstorelogo3.jpg; sourceTree = "<group>"; };
 		20FBEAA41A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSGenreAndAuthorExpandebleTableViewController.h; sourceTree = "<group>"; };
 		20FBEAA51A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSGenreAndAuthorExpandebleTableViewController.m; sourceTree = "<group>"; };
+		20FBEAB71A6AB4BC0053B304 /* InactiveStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InactiveStar.png; sourceTree = "<group>"; };
+		20FBEAB91A6C332B0053B304 /* BSAuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAuthorViewController.h; sourceTree = "<group>"; };
+		20FBEABA1A6C332B0053B304 /* BSAuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAuthorViewController.m; sourceTree = "<group>"; };
+		20FBEABC1A6C416D0053B304 /* BSVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVoteViewController.h; sourceTree = "<group>"; };
+		20FBEABD1A6C416D0053B304 /* BSVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVoteViewController.m; sourceTree = "<group>"; };
+		20FBEABF1A6D216A0053B304 /* ActiveStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActiveStar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +114,11 @@
 			children = (
 				20862C401A0AAF60002FDC34 /* AppDelegate.h */,
 				20862C411A0AAF60002FDC34 /* AppDelegate.m */,
-				20862C461A0AAF60002FDC34 /* BSSignInViewController.h */,
-				20862C471A0AAF60002FDC34 /* BSSignInViewController.m */,
 				20862C491A0AAF60002FDC34 /* Main.storyboard */,
-				20D30FE51A15323000999F7A /* BSSignUpTableViewController.h */,
-				20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */,
+				20FBEAC11A6E57C60053B304 /* BSSignUpTableViewController */,
+				20FBEAC41A6E58210053B304 /* BSSignInViewController */,
+				20FBEAC31A6E58010053B304 /* BSAuthorViewController */,
+				20FBEAC21A6E57F50053B304 /* BSVoteViewController */,
 				2011A3BB1A5F20DE0098E3C6 /* AccordionView */,
 				20862C4C1A0AAF60002FDC34 /* Images.xcassets */,
 				20862C4E1A0AAF60002FDC34 /* LaunchScreen.xib */,
@@ -148,10 +158,48 @@
 		20D310201A36DC4500999F7A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				20D310231A36DD0600999F7A /* boostorelogo3.jpg */,
-				20D310211A36DC4500999F7A /* boostorelogo.jpg */,
+				20FBEABF1A6D216A0053B304 /* ActiveStar.png */,
+				20FBEAB71A6AB4BC0053B304 /* InactiveStar.png */,
+				20D310231A36DD0600999F7A /* bookstorelogo3.jpg */,
+				20D310211A36DC4500999F7A /* bookstorelogo.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		20FBEAC11A6E57C60053B304 /* BSSignUpTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20D30FE51A15323000999F7A /* BSSignUpTableViewController.h */,
+				20D30FE61A15323000999F7A /* BSSignUpTableViewController.m */,
+			);
+			name = BSSignUpTableViewController;
+			sourceTree = "<group>";
+		};
+		20FBEAC21A6E57F50053B304 /* BSVoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20FBEABC1A6C416D0053B304 /* BSVoteViewController.h */,
+				20FBEABD1A6C416D0053B304 /* BSVoteViewController.m */,
+			);
+			name = BSVoteViewController;
+			sourceTree = "<group>";
+		};
+		20FBEAC31A6E58010053B304 /* BSAuthorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20FBEAB91A6C332B0053B304 /* BSAuthorViewController.h */,
+				20FBEABA1A6C332B0053B304 /* BSAuthorViewController.m */,
+			);
+			name = BSAuthorViewController;
+			sourceTree = "<group>";
+		};
+		20FBEAC41A6E58210053B304 /* BSSignInViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20862C461A0AAF60002FDC34 /* BSSignInViewController.h */,
+				20862C471A0AAF60002FDC34 /* BSSignInViewController.m */,
+			);
+			name = BSSignInViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +282,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D310241A36DD0600999F7A /* boostorelogo3.jpg in Resources */,
+				20FBEAC01A6D216A0053B304 /* ActiveStar.png in Resources */,
+				20D310241A36DD0600999F7A /* bookstorelogo3.jpg in Resources */,
 				20862C4B1A0AAF60002FDC34 /* Main.storyboard in Resources */,
-				20D310221A36DC4500999F7A /* boostorelogo.jpg in Resources */,
+				20FBEAB81A6AB4BC0053B304 /* InactiveStar.png in Resources */,
+				20D310221A36DC4500999F7A /* bookstorelogo.jpg in Resources */,
 				20862C501A0AAF60002FDC34 /* LaunchScreen.xib in Resources */,
 				20862C4D1A0AAF60002FDC34 /* Images.xcassets in Resources */,
 			);
@@ -259,8 +309,10 @@
 				20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */,
 				20FBEAA61A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m in Sources */,
 				20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */,
+				20FBEABE1A6C416D0053B304 /* BSVoteViewController.m in Sources */,
 				20862C481A0AAF60002FDC34 /* BSSignInViewController.m in Sources */,
 				20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */,
+				20FBEABB1A6C332B0053B304 /* BSAuthorViewController.m in Sources */,
 				20862C3F1A0AAF60002FDC34 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

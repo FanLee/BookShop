@@ -23,7 +23,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSq-tf-1IA" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="582"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boostorelogo3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-6A-tBX">
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookstorelogo3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-6A-tBX">
                                                 <rect key="frame" x="60" y="40" width="200" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="4Vl-cY-4T1"/>
@@ -40,7 +40,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="signInAction:" destination="NUd-Qr-gbp" eventType="touchUpInside" id="3Ry-9X-DPx"/>
-                                                    <segue destination="72m-w5-YAm" kind="push" id="pHY-BO-uqw"/>
+                                                    <segue destination="y2P-Dj-b5z" kind="push" id="c5K-dd-xdG"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzb-4V-JxO">
@@ -125,7 +125,250 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YB8-k0-VI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1293" y="350"/>
+            <point key="canvasLocation" x="53" y="126"/>
+        </scene>
+        <!--Author-->
+        <scene sceneID="1GG-q5-7AI">
+            <objects>
+                <viewController title="Author" id="Ioj-LF-FZU" customClass="BSAuthorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gJ2-0i-UK7"/>
+                        <viewControllerLayoutGuide type="bottom" id="4PZ-kJ-bpU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0fR-ux-b8z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YER-Mw-z9G">
+                                <rect key="frame" x="5" y="72" width="101" height="133"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZB-Qz-y4t">
+                                <rect key="frame" x="122" y="83" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aw-dg-aEn">
+                                <rect key="frame" x="184" y="83" width="120" height="21"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKy-l9-qMA">
+                                <rect key="frame" x="122" y="112" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zi-10-B3N">
+                                <rect key="frame" x="200" y="112" width="104" height="21"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birth date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJd-Gu-L8S">
+                                <rect key="frame" x="122" y="141" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPz-CU-6TG">
+                                <rect key="frame" x="210" y="141" width="94" height="21"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Genres:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHO-SG-FSc">
+                                <rect key="frame" x="122" y="170" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KT6-n4-rnc">
+                                <rect key="frame" x="184" y="170" width="120" height="21"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7p-NZ-3ws">
+                                <rect key="frame" x="5" y="241" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton:" destination="Ioj-LF-FZU" eventType="touchUpInside" id="TL5-5B-S5G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjC-Ph-Qub">
+                                <rect key="frame" x="65" y="241" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton:" destination="Ioj-LF-FZU" eventType="touchUpInside" id="onR-jg-H9g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MW-lM-d0T">
+                                <rect key="frame" x="127" y="241" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton:" destination="Ioj-LF-FZU" eventType="touchUpInside" id="B01-mU-cGB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHg-Lm-ukb">
+                                <rect key="frame" x="189" y="241" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton:" destination="Ioj-LF-FZU" eventType="touchUpInside" id="v9q-NY-a8g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-lh-cHm">
+                                <rect key="frame" x="251" y="241" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="f20-fS-0gz" kind="push" identifier="moveToVoteViewController" id="nXA-6P-kqr"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xqD-Ja-K1k">
+                                <rect key="frame" x="10" y="309" width="301" height="202"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hVA-j5-z4I">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVA-j5-z4I" id="YLz-Ln-u0s">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hgw-ee-QCk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hgw-ee-QCk" id="Opa-nw-glB">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Djr-8I-iWk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Djr-8I-iWk" id="MbV-6j-mAz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fe6-uc-k26">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fe6-uc-k26" id="8dG-z3-ekI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uFx-3e-B18"/>
+                    <connections>
+                        <outlet property="authorBirtDate" destination="jPz-CU-6TG" id="Fqv-6T-OOK"/>
+                        <outlet property="authorGenderLabel" destination="7Zi-10-B3N" id="gZW-f3-yW1"/>
+                        <outlet property="authorGenreLabel" destination="KT6-n4-rnc" id="sTP-fQ-Qgy"/>
+                        <outlet property="authorNameLabel" destination="7aw-dg-aEn" id="TP1-W8-8aT"/>
+                        <outlet property="authorPortrait" destination="YER-Mw-z9G" id="pdX-Yj-OPi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tph-Y2-HKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="-338"/>
+        </scene>
+        <!--VoteViewController-->
+        <scene sceneID="ol1-z0-KnE">
+            <objects>
+                <viewController storyboardIdentifier="voteViewController" title="VoteViewController" id="f20-fS-0gz" customClass="BSVoteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xkD-bv-E9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="0qM-Ar-o4e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g9a-6n-v2c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-OJ-dTh">
+                                <rect key="frame" x="67" y="254" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton2Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="xNA-7u-2Vy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dev-x0-uWZ">
+                                <rect key="frame" x="130" y="254" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton3Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="oN2-1a-6Xw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4N-gg-Ngv">
+                                <rect key="frame" x="193" y="254" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton4Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="fzf-NA-SFB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF8-ST-EjU">
+                                <rect key="frame" x="255" y="254" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton5Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="Xto-xI-J2B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5j-qn-aNX">
+                                <rect key="frame" x="5" y="254" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton1Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="URh-mv-2I0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lvu-Ky-u76"/>
+                    <connections>
+                        <outlet property="starButton1" destination="T5j-qn-aNX" id="Lga-vD-Nlm"/>
+                        <outlet property="starButton2" destination="GI9-OJ-dTh" id="U8n-qA-3rM"/>
+                        <outlet property="starButton3" destination="Dev-x0-uWZ" id="KXd-Cz-rXt"/>
+                        <outlet property="starButton4" destination="v4N-gg-Ngv" id="ebQ-bw-r6q"/>
+                        <outlet property="starButton5" destination="rF8-ST-EjU" id="ocR-wW-0Je"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ypq-Cl-BZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912" y="-338"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qxa-O0-s5F">
+            <objects>
+                <tabBarController id="y2P-Dj-b5z" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ejd-9C-ldR"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Fae-xd-owg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gng-eH-sJ6" kind="relationship" relationship="viewControllers" id="lRF-ik-AEp"/>
+                        <segue destination="3bK-2M-qXu" kind="relationship" relationship="viewControllers" id="75A-0s-yxn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UTI-S8-l8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="451"/>
         </scene>
         <!--Genre And Author Expandeble Table View Controller-->
         <scene sceneID="39c-L2-CP8">
@@ -154,7 +397,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jum-aA-di4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2750" y="584"/>
+            <point key="canvasLocation" x="1510" y="451"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="gXx-Vh-KAj">
@@ -406,7 +649,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB0-pL-EBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="-70"/>
+            <point key="canvasLocation" x="446" y="-294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KsX-al-24V">
@@ -424,50 +667,51 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCR-yu-1Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="350"/>
+            <point key="canvasLocation" x="-478" y="126"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="o8l-0P-prq">
+        <!--Item-->
+        <scene sceneID="fCi-TK-yTN">
             <objects>
-                <tabBarController id="72m-w5-YAm" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3bK-2M-qXu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="95F-36-DAm"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="1ld-Wz-Dqe"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="baC-MK-Lrs">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="JSb-UA-1sx" kind="relationship" relationship="viewControllers" id="2Fz-cS-eE2"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uV3-YM-z3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1686" y="584"/>
-        </scene>
-        <!--Library-->
-        <scene sceneID="1FC-QM-lb0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JSb-UA-1sx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Library" id="lfG-hy-WSh"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4lc-EV-AnO">
+                    <navigationItem key="navigationItem" id="jzd-M1-9nm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r48-MC-PTE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="CdJ-61-a5T" kind="relationship" relationship="rootViewController" id="Lb1-gp-HMx"/>
+                        <segue destination="Ioj-LF-FZU" kind="relationship" relationship="rootViewController" id="yoe-mv-GyF"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ds-J6-0Ug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFC-6Q-9Jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218" y="584"/>
+            <point key="canvasLocation" x="978" y="-338"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uEc-JU-Zx6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gng-eH-sJ6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dJA-LU-Z1i"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4w7-Zp-BdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CdJ-61-a5T" kind="relationship" relationship="rootViewController" id="qhG-eX-Ic3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xvp-Jw-8eV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="451"/>
         </scene>
     </scenes>
     <resources>
-        <image name="boostorelogo3.jpg" width="400" height="400"/>
+        <image name="InactiveStar.png" width="80" height="81"/>
+        <image name="bookstorelogo3.jpg" width="400" height="400"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
