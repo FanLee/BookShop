@@ -7,8 +7,10 @@
 //
 
 #import "BSSignUpTableViewController.h"
+#import "AppDelegate.h"
 
 @interface BSSignUpTableViewController ()
+
 
 @end
 
@@ -92,6 +94,34 @@
         
     }
      return 0;
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    _genderPickerResult=[self pickerView:_genderPicker titleForRow:row forComponent:component];
+    _agePickerResult=[self pickerView:_agePicker titleForRow:row forComponent:component];
+    
+}
+-(NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication]delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+-(IBAction)signUpAction:(id)sender{
+        NSManagedObjectContext *context = [self managedObjectContext];
+        NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+    [newUser setValue:self.emailTextField.text forKey:@"email"];
+    [newUser setValue:self.passwordTextField.text forKey:@"password"];
+    [newUser setValue:self.firstNameTextField.text forKey:@"firstname"];
+    [newUser setValue:self.lastNameTextField.text forKey:@"lastname"];
+    [newUser setValue:_genderPickerResult forKey:@"gender"];
+    [newUser setValue:_agePickerResult  forKey:@"age"];
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't save! %@ %@", error,[error localizedDescription]);
+    }
 }
 
 

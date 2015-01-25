@@ -289,8 +289,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5j-qn-aNX">
+                                <rect key="frame" x="5" y="206" width="60" height="60"/>
+                                <state key="normal" image="InactiveStar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starButton1Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="URh-mv-2I0"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-OJ-dTh">
-                                <rect key="frame" x="67" y="254" width="60" height="60"/>
+                                <rect key="frame" x="67" y="206" width="60" height="60"/>
                                 <state key="normal" image="InactiveStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -299,7 +308,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dev-x0-uWZ">
-                                <rect key="frame" x="130" y="254" width="60" height="60"/>
+                                <rect key="frame" x="130" y="206" width="60" height="60"/>
                                 <state key="normal" image="InactiveStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -308,7 +317,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4N-gg-Ngv">
-                                <rect key="frame" x="193" y="254" width="60" height="60"/>
+                                <rect key="frame" x="193" y="206" width="60" height="60"/>
                                 <state key="normal" image="InactiveStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -317,7 +326,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF8-ST-EjU">
-                                <rect key="frame" x="255" y="254" width="60" height="60"/>
+                                <rect key="frame" x="255" y="206" width="60" height="60"/>
                                 <state key="normal" image="InactiveStar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -325,13 +334,17 @@
                                     <action selector="starButton5Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="Xto-xI-J2B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5j-qn-aNX">
-                                <rect key="frame" x="5" y="254" width="60" height="60"/>
-                                <state key="normal" image="InactiveStar.png">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-IG-G2F">
+                                <rect key="frame" x="16" y="319" width="288" height="75"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.98039215686274506" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Save rating">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="starButton1Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="URh-mv-2I0"/>
+                                    <action selector="saveButtonAction" destination="f20-fS-0gz" eventType="touchUpInside" id="WTe-hx-Agm"/>
+                                    <action selector="saveRatingAction:" destination="f20-fS-0gz" eventType="touchUpInside" id="PtY-jf-Wua"/>
                                 </connections>
                             </button>
                         </subviews>

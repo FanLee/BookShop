@@ -16,6 +16,8 @@
 @property (nonatomic,strong) IBOutlet UITextField *confirmPasswordTextField;
 @property (nonatomic,assign) IBOutlet UIPickerView *genderPicker;
 @property (nonatomic,assign) IBOutlet UIPickerView *agePicker;
+@property(nonatomic,strong)NSString *genderPickerResult;
+@property(nonatomic,strong)NSString *agePickerResult;
 -(IBAction)signUpAction:(id)sender;
 
 
