@@ -23,31 +23,24 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    
 }
     
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return 8;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    
     return 1;
-    
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     if (pickerView == _genderPicker){
     return 2;
-        
     }else if(pickerView == _agePicker){
         return 5;
     }
@@ -55,16 +48,12 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
     if ( pickerView== _genderPicker) {
-        
-    
     if (component==0&&row==0) {
         return @"Male";
     }else {
         
     return @"Female";
-    
     }
     }
     else if (pickerView == _agePicker){
@@ -85,13 +74,8 @@
                 case 4:
                     return @"50";
                     break;
-                    
             }
-            
-            
         }
-
-        
     }
      return 0;
 }
@@ -109,6 +93,8 @@
     return context;
 }
 -(IBAction)signUpAction:(id)sender{
+    if (_passwordTextField.text == _confirmPasswordTextField.text) {
+        
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     [newUser setValue:self.emailTextField.text forKey:@"email"];
@@ -117,11 +103,20 @@
     [newUser setValue:self.lastNameTextField.text forKey:@"lastname"];
     [newUser setValue:_genderPickerResult forKey:@"gender"];
     [newUser setValue:_agePickerResult  forKey:@"age"];
-    
     NSError *error = nil;
     if (![context save:&error]) {
         NSLog(@"Can't save! %@ %@", error,[error localizedDescription]);
     }
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Attention" message:@"Password and Confirm password doesn't match" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{    [_emailTextField resignFirstResponder];
+    [_lastNameTextField resignFirstResponder];
+    [_firstNameTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+    [_confirmPasswordTextField resignFirstResponder];
 }
 
 

@@ -15,8 +15,6 @@
 
 @implementation BSSignInViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _emailTextField.delegate=self;
@@ -25,22 +23,18 @@
     _signInButton.layer.borderColor = [UIColor blackColor].CGColor;
     _signInButton.layer.cornerRadius = 5.0f;
     self.navigationController.navigationBar.hidden = YES;
-   }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
-    
     [_scrollView setContentOffset:CGPointMake(0,155)animated:YES];
 }
-
 - (IBAction)signInAction:(id)sender {
     [_emailTextField resignFirstResponder];
     [_passTextField resignFirstResponder];
-    
 }
 
 -(IBAction)backgroundTouched:(id)sender{

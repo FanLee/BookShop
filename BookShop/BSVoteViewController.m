@@ -48,7 +48,6 @@
 }
 
 -(void)changeButtonImage:(UIButton*)starButton{
-    //[[_buttonsArray objectAtIndex:0] setImage:_activeStar forState:UIControlStateNormal];
         if (starButton==_starButton1) {
             [[_buttonsArray objectAtIndex:0] setImage:_activeStar forState:UIControlStateNormal];
             [[_buttonsArray objectAtIndex:1] setImage:_inactiveStar forState:UIControlStateNormal];
@@ -74,19 +73,16 @@
             _starRating=3;
 
         }else if (starButton==_starButton4){
-            [[_buttonsArray objectAtIndex:0]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:1]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:2]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:3]setImage:_activeStar forState:UIControlStateNormal];
+            for (int i=0;i<4;i++) {
+            [[_buttonsArray objectAtIndex:i]setImage:_activeStar forState:UIControlStateNormal];
+            }
             [[_buttonsArray objectAtIndex:4] setImage:_inactiveStar forState:UIControlStateNormal];
             _starRating=4;
         }else if (starButton==_starButton5){
-            [[_buttonsArray objectAtIndex:0]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:1]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:2]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:3]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:4]setImage:_activeStar forState:UIControlStateNormal];
-            _starRating=5;
+            for (starButton in _buttonsArray) {
+                [starButton setImage:_activeStar forState:UIControlStateNormal];
+                _starRating=5;
+            }
         }
     }
 -(NSManagedObjectContext *)managedObjectContext{
@@ -97,7 +93,7 @@
     }
     return context;
 }
--(IBAction)saveButtonAction{
+-(IBAction)saveRatingAction:(id)sender{
     NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSManagedObject *rating = [NSEntityDescription insertNewObjectForEntityForName:@"Rating" inManagedObjectContext:managedObjectContext];
     [rating setValue:[NSString stringWithFormat:@"%lu",(unsigned long)_starRating] forKey:@"rating"];
