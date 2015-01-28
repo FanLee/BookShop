@@ -18,11 +18,7 @@
 @property(nonatomic,strong) UIImage* inactiveStar;
 @property(nonatomic,strong) NSArray* buttonsArray;
 @property(nonatomic,assign) NSUInteger starRating;
--(IBAction)starButton1Action:(id)sender;
--(IBAction)starButton2Action:(id)sender;
--(IBAction)starButton3Action:(id)sender;
--(IBAction)starButton4Action:(id)sender;
--(IBAction)starButton5Action:(id)sender;
+-(IBAction)starButtonAction:(id)sender;
 -(IBAction)saveRatingAction:(id)sender;
 
 @end

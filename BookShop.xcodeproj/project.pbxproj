@@ -23,6 +23,10 @@
 		20FBEABB1A6C332B0053B304 /* BSAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEABA1A6C332B0053B304 /* BSAuthorViewController.m */; };
 		20FBEABE1A6C416D0053B304 /* BSVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEABD1A6C416D0053B304 /* BSVoteViewController.m */; };
 		20FBEAC01A6D216A0053B304 /* ActiveStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FBEABF1A6D216A0053B304 /* ActiveStar.png */; };
+		20FBEAC71A780CA20053B304 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAC61A780CA20053B304 /* User.m */; };
+		20FBEACA1A780CBB0053B304 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAC91A780CBB0053B304 /* Author.m */; };
+		20FBEACD1A780CD30053B304 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEACC1A780CD30053B304 /* Book.m */; };
+		20FBEAD01A780CF00053B304 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEACF1A780CF00053B304 /* Rating.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,14 @@
 		20FBEABC1A6C416D0053B304 /* BSVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVoteViewController.h; sourceTree = "<group>"; };
 		20FBEABD1A6C416D0053B304 /* BSVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVoteViewController.m; sourceTree = "<group>"; };
 		20FBEABF1A6D216A0053B304 /* ActiveStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActiveStar.png; sourceTree = "<group>"; };
+		20FBEAC51A780CA20053B304 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		20FBEAC61A780CA20053B304 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		20FBEAC81A780CBB0053B304 /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		20FBEAC91A780CBB0053B304 /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		20FBEACB1A780CD30053B304 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		20FBEACC1A780CD30053B304 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		20FBEACE1A780CF00053B304 /* Rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
+		20FBEACF1A780CF00053B304 /* Rating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,7 @@
 				20862C401A0AAF60002FDC34 /* AppDelegate.h */,
 				20862C411A0AAF60002FDC34 /* AppDelegate.m */,
 				20862C491A0AAF60002FDC34 /* Main.storyboard */,
+				20FBEAD11A780CFD0053B304 /* DBManagedObjects */,
 				20FBEAC11A6E57C60053B304 /* BSSignUpTableViewController */,
 				20FBEAC41A6E58210053B304 /* BSSignInViewController */,
 				20FBEAC31A6E58010053B304 /* BSAuthorViewController */,
@@ -200,6 +213,21 @@
 				20862C471A0AAF60002FDC34 /* BSSignInViewController.m */,
 			);
 			name = BSSignInViewController;
+			sourceTree = "<group>";
+		};
+		20FBEAD11A780CFD0053B304 /* DBManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				20FBEAC51A780CA20053B304 /* User.h */,
+				20FBEAC61A780CA20053B304 /* User.m */,
+				20FBEAC81A780CBB0053B304 /* Author.h */,
+				20FBEAC91A780CBB0053B304 /* Author.m */,
+				20FBEACB1A780CD30053B304 /* Book.h */,
+				20FBEACC1A780CD30053B304 /* Book.m */,
+				20FBEACE1A780CF00053B304 /* Rating.h */,
+				20FBEACF1A780CF00053B304 /* Rating.m */,
+			);
+			name = DBManagedObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FBEAD01A780CF00053B304 /* Rating.m in Sources */,
 				20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */,
 				20FBEAA61A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m in Sources */,
+				20FBEAC71A780CA20053B304 /* User.m in Sources */,
 				20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */,
+				20FBEACD1A780CD30053B304 /* Book.m in Sources */,
+				20FBEACA1A780CBB0053B304 /* Author.m in Sources */,
 				20FBEABE1A6C416D0053B304 /* BSVoteViewController.m in Sources */,
 				20862C481A0AAF60002FDC34 /* BSSignInViewController.m in Sources */,
 				20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */,

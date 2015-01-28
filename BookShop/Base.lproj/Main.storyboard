@@ -389,7 +389,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="starButton1Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="URh-mv-2I0"/>
+                                    <action selector="starButtonAction:" destination="f20-fS-0gz" eventType="touchUpInside" id="Wc0-Co-rq1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-OJ-dTh">
@@ -402,7 +402,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="starButton2Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="xNA-7u-2Vy"/>
+                                    <action selector="starButtonAction:" destination="f20-fS-0gz" eventType="touchUpInside" id="JCb-tl-dUg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dev-x0-uWZ">
@@ -415,7 +415,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="starButton3Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="oN2-1a-6Xw"/>
+                                    <action selector="starButtonAction:" destination="f20-fS-0gz" eventType="touchUpInside" id="lDA-8t-1zk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4N-gg-Ngv">
@@ -428,7 +428,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="starButton4Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="fzf-NA-SFB"/>
+                                    <action selector="starButtonAction:" destination="f20-fS-0gz" eventType="touchUpInside" id="ogX-QN-Y90"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rF8-ST-EjU">
@@ -441,7 +441,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="starButton5Action:" destination="f20-fS-0gz" eventType="touchUpInside" id="Xto-xI-J2B"/>
+                                    <action selector="starButtonAction:" destination="f20-fS-0gz" eventType="touchUpInside" id="O98-Ug-4JL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-IG-G2F">

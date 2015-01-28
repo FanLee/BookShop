@@ -49,12 +49,12 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if ( pickerView== _genderPicker) {
-    if (component==0&&row==0) {
-        return @"Male";
-    }else {
-        
-    return @"Female";
-    }
+        if (component==0&&row==0) {
+            return @"Male";
+        } else {
+            
+            return @"Female";
+        }
     }
     else if (pickerView == _agePicker){
         if (component==0) {
@@ -97,13 +97,13 @@
         
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-    [newUser setValue:self.emailTextField.text forKey:@"email"];
-    [newUser setValue:self.passwordTextField.text forKey:@"password"];
-    [newUser setValue:self.firstNameTextField.text forKey:@"firstname"];
-    [newUser setValue:self.lastNameTextField.text forKey:@"lastname"];
-    [newUser setValue:_genderPickerResult forKey:@"gender"];
-    [newUser setValue:_agePickerResult  forKey:@"age"];
-    NSError *error = nil;
+        [newUser setValue:self.emailTextField.text forKey:@"email"];
+        [newUser setValue:self.passwordTextField.text forKey:@"password"];
+        [newUser setValue:self.firstNameTextField.text forKey:@"firstname"];
+        [newUser setValue:self.lastNameTextField.text forKey:@"lastname"];
+        [newUser setValue:_genderPickerResult forKey:@"gender"];
+        [newUser setValue:_agePickerResult  forKey:@"age"];
+        NSError *error = nil;
     if (![context save:&error]) {
         NSLog(@"Can't save! %@ %@", error,[error localizedDescription]);
     }

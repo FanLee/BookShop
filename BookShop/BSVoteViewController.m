@@ -27,64 +27,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
--(IBAction)starButton1Action:(id)sender{
-    [self changeButtonImage:_starButton1];
-}
--(IBAction)starButton2Action:(id)sender{
-    [self changeButtonImage:_starButton2];
-}
-
--(IBAction)starButton3Action:(id)sender{
-    [self changeButtonImage:_starButton3];
-}
-
--(IBAction)starButton4Action:(id)sender{
-    [self changeButtonImage:_starButton4];
-}
-
--(IBAction)starButton5Action:(id)sender{
-    //[_starButton1 setImage:_activeStar forState:UIControlStateNormal];
-    [self changeButtonImage:_starButton5];
+-(IBAction)starButtonAction:(id)sender{
+    [self changeButtonImage:sender];
 }
 
 -(void)changeButtonImage:(UIButton*)starButton{
-        if (starButton==_starButton1) {
-            [[_buttonsArray objectAtIndex:0] setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:1] setImage:_inactiveStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:2] setImage:_inactiveStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:3] setImage:_inactiveStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:4] setImage:_inactiveStar forState:UIControlStateNormal];
-            _starRating=1;
-
-        }else if (starButton==_starButton2){
-            [[_buttonsArray objectAtIndex:0]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:1]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:2] setImage:_inactiveStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:3] setImage:_inactiveStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:4] setImage:_inactiveStar forState:UIControlStateNormal];
-            _starRating=2;
-
-        }else if (starButton==_starButton3){
-            [[_buttonsArray objectAtIndex:0]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:1]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:2]setImage:_activeStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:3] setImage:_inactiveStar forState:UIControlStateNormal];
-            [[_buttonsArray objectAtIndex:4] setImage:_inactiveStar forState:UIControlStateNormal];
-            _starRating=3;
-
-        }else if (starButton==_starButton4){
-            for (int i=0;i<4;i++) {
-            [[_buttonsArray objectAtIndex:i]setImage:_activeStar forState:UIControlStateNormal];
-            }
-            [[_buttonsArray objectAtIndex:4] setImage:_inactiveStar forState:UIControlStateNormal];
-            _starRating=4;
-        }else if (starButton==_starButton5){
-            for (starButton in _buttonsArray) {
-                [starButton setImage:_activeStar forState:UIControlStateNormal];
-                _starRating=5;
-            }
+    NSUInteger index = [_buttonsArray indexOfObject:starButton];
+    for (int i=0; i<[_buttonsArray count]; i++) {
+        if(i<=index){
+            [[_buttonsArray objectAtIndex:i] setImage:_activeStar forState:UIControlStateNormal];
+        }else{
+             [[_buttonsArray objectAtIndex:i] setImage:_inactiveStar forState:UIControlStateNormal];
         }
     }
+}
 -(NSManagedObjectContext *)managedObjectContext{
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication]delegate];
