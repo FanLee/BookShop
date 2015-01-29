@@ -27,6 +27,8 @@
 		20FBEACA1A780CBB0053B304 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAC91A780CBB0053B304 /* Author.m */; };
 		20FBEACD1A780CD30053B304 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEACC1A780CD30053B304 /* Book.m */; };
 		20FBEAD01A780CF00053B304 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEACF1A780CF00053B304 /* Rating.m */; };
+		20FBEAD41A7A23F80053B304 /* BSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAD31A7A23F80053B304 /* BSDBManager.m */; };
+		20FBEAD71A7A25A90053B304 /* UsersAuthorRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAD61A7A25A90053B304 /* UsersAuthorRating.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		20FBEACC1A780CD30053B304 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		20FBEACE1A780CF00053B304 /* Rating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
 		20FBEACF1A780CF00053B304 /* Rating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
+		20FBEAD21A7A23F80053B304 /* BSDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSDBManager.h; sourceTree = "<group>"; };
+		20FBEAD31A7A23F80053B304 /* BSDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSDBManager.m; sourceTree = "<group>"; };
+		20FBEAD51A7A25A90053B304 /* UsersAuthorRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersAuthorRating.h; sourceTree = "<group>"; };
+		20FBEAD61A7A25A90053B304 /* UsersAuthorRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersAuthorRating.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,8 +225,12 @@
 			isa = PBXGroup;
 			children = (
 				20FBEAC51A780CA20053B304 /* User.h */,
+				20FBEAD51A7A25A90053B304 /* UsersAuthorRating.h */,
+				20FBEAD61A7A25A90053B304 /* UsersAuthorRating.m */,
 				20FBEAC61A780CA20053B304 /* User.m */,
 				20FBEAC81A780CBB0053B304 /* Author.h */,
+				20FBEAD21A7A23F80053B304 /* BSDBManager.h */,
+				20FBEAD31A7A23F80053B304 /* BSDBManager.m */,
 				20FBEAC91A780CBB0053B304 /* Author.m */,
 				20FBEACB1A780CD30053B304 /* Book.h */,
 				20FBEACC1A780CD30053B304 /* Book.m */,
@@ -341,8 +351,10 @@
 				20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */,
 				20FBEACD1A780CD30053B304 /* Book.m in Sources */,
 				20FBEACA1A780CBB0053B304 /* Author.m in Sources */,
+				20FBEAD41A7A23F80053B304 /* BSDBManager.m in Sources */,
 				20FBEABE1A6C416D0053B304 /* BSVoteViewController.m in Sources */,
 				20862C481A0AAF60002FDC34 /* BSSignInViewController.m in Sources */,
+				20FBEAD71A7A25A90053B304 /* UsersAuthorRating.m in Sources */,
 				20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */,
 				20FBEABB1A6C332B0053B304 /* BSAuthorViewController.m in Sources */,
 				20862C3F1A0AAF60002FDC34 /* main.m in Sources */,

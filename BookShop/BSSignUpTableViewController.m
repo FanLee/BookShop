@@ -93,7 +93,7 @@
     return context;
 }
 -(IBAction)signUpAction:(id)sender{
-    if (_passwordTextField.text == _confirmPasswordTextField.text) {
+    if ([_passwordTextField.text isEqualToString:_confirmPasswordTextField.text]) {
         
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
@@ -104,12 +104,16 @@
         [newUser setValue:_genderPickerResult forKey:@"gender"];
         [newUser setValue:_agePickerResult  forKey:@"age"];
         NSError *error = nil;
+        [self performSegueWithIdentifier:@"signedup" sender:self];
+
     if (![context save:&error]) {
         NSLog(@"Can't save! %@ %@", error,[error localizedDescription]);
     }
+    
     }else{
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Attention" message:@"Password and Confirm password doesn't match" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
+    
     }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{    [_emailTextField resignFirstResponder];

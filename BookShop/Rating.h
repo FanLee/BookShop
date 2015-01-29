@@ -7,7 +7,11 @@
 //
 
 #import <CoreData/CoreData.h>
+#import "Author.h"
+#import "User.h"
 
 @interface Rating : NSManagedObject
 @property(nonatomic,assign)NSInteger rating;
+@property(nonatomic,retain)Author *author;
+@property(nonatomic,retain)User *user;
 @end

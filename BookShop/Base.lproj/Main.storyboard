@@ -40,8 +40,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="signInAction:" destination="NUd-Qr-gbp" eventType="touchUpInside" id="3Ry-9X-DPx"/>
-                                                    <segue destination="y2P-Dj-b5z" kind="push" id="c5K-dd-xdG"/>
+                                                    <action selector="signInAction:" destination="NUd-Qr-gbp" eventType="touchUpInside" id="wIk-Ya-2Ox"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzb-4V-JxO">
@@ -70,7 +69,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="y95-ca-pnw" kind="push" id="c34-X2-5nu"/>
+                                                    <segue destination="y95-ca-pnw" kind="push" identifier="" id="c34-X2-5nu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -121,7 +120,8 @@
                         <outlet property="emailTextField" destination="qzb-4V-JxO" id="4xJ-p6-dSU"/>
                         <outlet property="passTextField" destination="00E-RX-otb" id="IB8-Wu-eBY"/>
                         <outlet property="scrollView" destination="ErL-9h-IC6" id="0kB-iF-HtY"/>
-                        <outlet property="signInButton" destination="qL9-w4-2tL" id="gn0-dt-hbB"/>
+                        <outlet property="signInButton" destination="qL9-w4-2tL" id="xNN-vy-azc"/>
+                        <segue destination="y2P-Dj-b5z" kind="modal" identifier="login" id="tvf-cg-ZMG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YB8-k0-VI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -760,6 +760,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="signUpAction:" destination="y95-ca-pnw" eventType="touchUpInside" id="tuD-fZ-pT3"/>
+                                                        <segue destination="y2P-Dj-b5z" kind="modal" identifier="signedup" id="S8X-xw-Mr2"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -861,4 +862,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="tvf-cg-ZMG"/>
+    </inferredMetricsTieBreakers>
 </document>
