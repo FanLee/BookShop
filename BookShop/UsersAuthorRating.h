@@ -7,7 +7,15 @@
 //
 
 #import <CoreData/CoreData.h>
+#import "Book.h"
+#import "User.h"
+#import "Author.h"
 
 @interface UsersAuthorRating : NSManagedObject
+
+@property (nonatomic, retain) NSNumber * rate;
+@property (nonatomic, retain) Book *book;
+@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) Author *author;
 
 @end

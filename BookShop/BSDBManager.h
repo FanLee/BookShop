@@ -25,7 +25,8 @@
 +(id)sharedInstance;
 -(NSArray*)getEntityData:(NSString*)entityName;
 -(User*)createNewUserWithUsername:(NSString*)username;
--(User*)findUserWithUsername:(NSString*)username;
+-(User*)getUserFromDB:(NSString*)username;
+-(BOOL)authentification:(NSString*)username password:(NSString*)password;
 -(void)newRateForAuthor:(Author*)book rate:(int)rate;
 -(void)saveChangesInDB;
 -(Author*)findAuthorByID:(NSNumber*)authorID;

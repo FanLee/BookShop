@@ -16,6 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _authorNameLabel.text=_author.name;
+    _authorGenreLabel.text=_author.genre.genreName;
+    _authorBirtDate.text=_author.birthdate;
+    _authorGenderLabel.text=_author.gender;
+    //_authorsRating=_author.
+    
 }
 
 - (void)didReceiveMemoryWarning {

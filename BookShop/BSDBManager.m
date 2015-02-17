@@ -67,22 +67,39 @@
     [self saveChangesInDB];
     return user;
 }
--(User*)findUserWithUsername:(NSString*)username
-{
-    for(User *user in _users)
-    {
-        if([user.email isEqualToString:username])
-        {
-            return user;
-        }
+-(BOOL)authentification:(NSString *)username password:(NSString *)password{
+    NSError * error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"email=%@ AND ANY password=%@",username,password];
+    [fetchRequest setPredicate:predicate];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    if ([fetchedObjects count]>0) {
+        return YES;
     }
-    return NULL;
+    return NO;
+}
+-(User*)getUserFromDB:(NSString*)userName{
+    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+    user.email = userName;
+    NSError * error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"email=%@",userName];
+    [fetchRequest setPredicate:predicate];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for(user in fetchedObjects){
+    return user;
+    }
+    return 0;
 }
 -(Author*)findAuthorByID:(NSNumber*)authorID
 {
     for(Author *author in _authors)
     {
-        if (author.authorID == [authorID integerValue])
+        if (author.authorID == authorID)
         {
             return author;
         }
@@ -93,7 +110,7 @@
 {
     for(Book *book in _books)
     {
-        if (book.bookID == [bookID integerValue])
+        if (book.bookID == bookID)
         {
             return book;
         }

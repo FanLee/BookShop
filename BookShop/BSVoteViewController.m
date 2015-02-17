@@ -8,6 +8,10 @@
 
 #import "BSVoteViewController.h"
 #import "AppDelegate.h"
+#import "BSDBManager.h"
+#import "User.h"
+#import "Author.h"
+#import "UsersAuthorRating.h"
 
 @interface BSVoteViewController ()
 
@@ -29,6 +33,9 @@
 }
 -(IBAction)starButtonAction:(id)sender{
     [self changeButtonImage:sender];
+    if (sender==_starButton1) {
+        
+    }
 }
 
 -(void)changeButtonImage:(UIButton*)starButton{
@@ -50,11 +57,25 @@
     return context;
 }
 -(IBAction)saveRatingAction:(id)sender{
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    
+/* NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
     NSManagedObject *rating = [NSEntityDescription insertNewObjectForEntityForName:@"Rating" inManagedObjectContext:managedObjectContext];
-    [rating setValue:[NSString stringWithFormat:@"%lu",(unsigned long)_starRating] forKey:@"rating"];
+    [rating setValue:[NSString stringWithFormat:@"%lu",(unsigned long)_starRating] forKey:@"rating"];*/
     
 }
-
+-(void)addRating:(int)rating{
+    BSDBManager *dbManager = [BSDBManager sharedInstance];
+    AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    for(UsersAuthorRating *rate in appDelegate.aplicationUser.usersRatings.allObjects)
+    {
+        if(rate.author==_author)
+        {
+            rate.rate = [NSNumber numberWithInt:rating];
+            [dbManager saveChangesInDB];
+            return;
+        }
+    }
+    [dbManager newRateForAuthor:_author rate:rating];
+}
 
 @end

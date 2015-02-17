@@ -7,7 +7,17 @@
 //
 
 #import "User.h"
+#import "Author.h"
 
 @implementation User
 
+@dynamic email;
+@dynamic password;
+@dynamic userID;
+@dynamic firstname;
+@dynamic lastname;
+@dynamic gender;
+@dynamic age;
+@dynamic usersRatings;
+@dynamic allAuthors;
 @end

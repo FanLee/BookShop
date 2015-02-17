@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Author.h"
+#import "User.h"
+#import "UsersAuthorRating.h"
+//@class Author,User,UsersAuthorRating;
 
 @interface BSVoteViewController : UIViewController
 @property(nonatomic,strong)IBOutlet UIButton* starButton1;
@@ -18,7 +22,9 @@
 @property(nonatomic,strong) UIImage* inactiveStar;
 @property(nonatomic,strong) NSArray* buttonsArray;
 @property(nonatomic,assign) NSUInteger starRating;
+@property(nonatomic,strong)Author *author;
 -(IBAction)starButtonAction:(id)sender;
 -(IBAction)saveRatingAction:(id)sender;
+-(void)addRating:(int)rating;
 
 @end

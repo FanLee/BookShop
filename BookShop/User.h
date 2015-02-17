@@ -7,13 +7,19 @@
 //
 
 #import <CoreData/CoreData.h>
+#import "Author.h"
+
 
 @interface User : NSManagedObject
-@property(nonatomic,assign)NSInteger age;
+
+@property(nonatomic,assign)NSNumber *age;
 @property(nonatomic,retain)NSString *email;
-@property(nonatomic,retain)NSString *firstName;
+@property(nonatomic,retain)NSString *firstname;
 @property(nonatomic,retain)NSString *gender;
-@property(nonatomic,retain)NSString *lastName;
+@property(nonatomic,retain)NSString *lastname;
 @property(nonatomic,retain)NSString *password;
-@property(nonatomic,assign)NSInteger userID;
+@property(nonatomic,assign)NSNumber *userID;
+@property(nonatomic,retain)NSSet *usersRatings;
+@property(nonatomic,retain)Author *allAuthors;
+
 @end

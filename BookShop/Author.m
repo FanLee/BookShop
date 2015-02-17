@@ -7,7 +7,17 @@
 //
 
 #import "Author.h"
+#import "Book.h"
+#import "Genre.h"
 
 @implementation Author
+
+@dynamic authorID;
+@dynamic name;
+@dynamic birthdate;
+@dynamic gender;
+@dynamic genre;
+@dynamic portrait;
+@dynamic authorsBooks;
 
 @end

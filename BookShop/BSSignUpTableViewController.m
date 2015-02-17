@@ -116,7 +116,8 @@
     
     }
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{    [_emailTextField resignFirstResponder];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPat{
+    [_emailTextField resignFirstResponder];
     [_lastNameTextField resignFirstResponder];
     [_firstNameTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];

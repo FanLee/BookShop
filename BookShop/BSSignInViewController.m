@@ -50,11 +50,14 @@
 -(BOOL)authentification{
     if (![_emailTextField.text isEqualToString:@""]&&![_passTextField.text isEqualToString:@""]) {
         BSDBManager* dbManager = [BSDBManager sharedInstance];
-        User* user = [dbManager findUserWithUsername:_emailTextField.text];
-        if([user.password isEqualToString:_passTextField.text])
+        BOOL aut = [dbManager authentification:_emailTextField.text password:_passTextField.text];
+        if(aut==YES)
         {
             AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-            appDelegate.aplicationUser = user;
+            //User* user;
+            //[dbManager getUserFromDB:_emailTextField.text];
+            appDelegate.aplicationUser = [dbManager getUserFromDB:_emailTextField.text];
+            NSString* us= [NSString stringWithFormat:@"%@", appDelegate.aplicationUser.email];
             [self performSegueWithIdentifier:@"login" sender:self];
             [self.view endEditing:true];
             return true;

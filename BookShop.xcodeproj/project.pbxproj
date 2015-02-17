@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201BF2E21A8CD67A0096F1B0 /* BSWIDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BF2E11A8CD67A0096F1B0 /* BSWIDBViewController.m */; };
+		201BF2E61A8D14910096F1B0 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 201BF2E51A8D14910096F1B0 /* Genre.m */; };
 		20862C3F1A0AAF60002FDC34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C3E1A0AAF60002FDC34 /* main.m */; };
 		20862C421A0AAF60002FDC34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20862C411A0AAF60002FDC34 /* AppDelegate.m */; };
 		20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20862C431A0AAF60002FDC34 /* BookShop.xcdatamodeld */; };
@@ -29,6 +31,9 @@
 		20FBEAD01A780CF00053B304 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEACF1A780CF00053B304 /* Rating.m */; };
 		20FBEAD41A7A23F80053B304 /* BSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAD31A7A23F80053B304 /* BSDBManager.m */; };
 		20FBEAD71A7A25A90053B304 /* UsersAuthorRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAD61A7A25A90053B304 /* UsersAuthorRating.m */; };
+		20FBEADE1A7B63590053B304 /* author1.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FBEADC1A7B63590053B304 /* author1.png */; };
+		20FBEADF1A7B63590053B304 /* book1.png in Resources */ = {isa = PBXBuildFile; fileRef = 20FBEADD1A7B63590053B304 /* book1.png */; };
+		20FBEAE21A7BAF9C0053B304 /* BSAuthorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBEAE11A7BAF9C0053B304 /* BSAuthorTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201BF2E01A8CD67A0096F1B0 /* BSWIDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSWIDBViewController.h; sourceTree = "<group>"; };
+		201BF2E11A8CD67A0096F1B0 /* BSWIDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSWIDBViewController.m; sourceTree = "<group>"; };
+		201BF2E41A8D14910096F1B0 /* Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		201BF2E51A8D14910096F1B0 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
 		20862C391A0AAF60002FDC34 /* BookShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20862C3D1A0AAF60002FDC34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20862C3E1A0AAF60002FDC34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +89,10 @@
 		20FBEAD31A7A23F80053B304 /* BSDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSDBManager.m; sourceTree = "<group>"; };
 		20FBEAD51A7A25A90053B304 /* UsersAuthorRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersAuthorRating.h; sourceTree = "<group>"; };
 		20FBEAD61A7A25A90053B304 /* UsersAuthorRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersAuthorRating.m; sourceTree = "<group>"; };
+		20FBEADC1A7B63590053B304 /* author1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = author1.png; sourceTree = "<group>"; };
+		20FBEADD1A7B63590053B304 /* book1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book1.png; sourceTree = "<group>"; };
+		20FBEAE01A7BAF9C0053B304 /* BSAuthorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAuthorTableViewCell.h; sourceTree = "<group>"; };
+		20FBEAE11A7BAF9C0053B304 /* BSAuthorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAuthorTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +118,19 @@
 			children = (
 				20FBEAA41A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.h */,
 				20FBEAA51A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m */,
+				20FBEAE01A7BAF9C0053B304 /* BSAuthorTableViewCell.h */,
+				20FBEAE11A7BAF9C0053B304 /* BSAuthorTableViewCell.m */,
 			);
 			name = AccordionView;
+			sourceTree = "<group>";
+		};
+		201BF2E31A8CD6850096F1B0 /* WriteinDB */ = {
+			isa = PBXGroup;
+			children = (
+				201BF2E01A8CD67A0096F1B0 /* BSWIDBViewController.h */,
+				201BF2E11A8CD67A0096F1B0 /* BSWIDBViewController.m */,
+			);
+			name = WriteinDB;
 			sourceTree = "<group>";
 		};
 		20862C301A0AAF60002FDC34 = {
@@ -133,6 +157,7 @@
 				20862C401A0AAF60002FDC34 /* AppDelegate.h */,
 				20862C411A0AAF60002FDC34 /* AppDelegate.m */,
 				20862C491A0AAF60002FDC34 /* Main.storyboard */,
+				201BF2E31A8CD6850096F1B0 /* WriteinDB */,
 				20FBEAD11A780CFD0053B304 /* DBManagedObjects */,
 				20FBEAC11A6E57C60053B304 /* BSSignUpTableViewController */,
 				20FBEAC41A6E58210053B304 /* BSSignInViewController */,
@@ -177,6 +202,8 @@
 		20D310201A36DC4500999F7A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				20FBEADC1A7B63590053B304 /* author1.png */,
+				20FBEADD1A7B63590053B304 /* book1.png */,
 				20FBEABF1A6D216A0053B304 /* ActiveStar.png */,
 				20FBEAB71A6AB4BC0053B304 /* InactiveStar.png */,
 				20D310231A36DD0600999F7A /* bookstorelogo3.jpg */,
@@ -225,17 +252,19 @@
 			isa = PBXGroup;
 			children = (
 				20FBEAC51A780CA20053B304 /* User.h */,
+				20FBEAC61A780CA20053B304 /* User.m */,
 				20FBEAD51A7A25A90053B304 /* UsersAuthorRating.h */,
 				20FBEAD61A7A25A90053B304 /* UsersAuthorRating.m */,
-				20FBEAC61A780CA20053B304 /* User.m */,
 				20FBEAC81A780CBB0053B304 /* Author.h */,
+				20FBEAC91A780CBB0053B304 /* Author.m */,
 				20FBEAD21A7A23F80053B304 /* BSDBManager.h */,
 				20FBEAD31A7A23F80053B304 /* BSDBManager.m */,
-				20FBEAC91A780CBB0053B304 /* Author.m */,
 				20FBEACB1A780CD30053B304 /* Book.h */,
 				20FBEACC1A780CD30053B304 /* Book.m */,
 				20FBEACE1A780CF00053B304 /* Rating.h */,
 				20FBEACF1A780CF00053B304 /* Rating.m */,
+				201BF2E41A8D14910096F1B0 /* Genre.h */,
+				201BF2E51A8D14910096F1B0 /* Genre.m */,
 			);
 			name = DBManagedObjects;
 			sourceTree = "<group>";
@@ -322,6 +351,8 @@
 			files = (
 				20FBEAC01A6D216A0053B304 /* ActiveStar.png in Resources */,
 				20D310241A36DD0600999F7A /* bookstorelogo3.jpg in Resources */,
+				20FBEADF1A7B63590053B304 /* book1.png in Resources */,
+				20FBEADE1A7B63590053B304 /* author1.png in Resources */,
 				20862C4B1A0AAF60002FDC34 /* Main.storyboard in Resources */,
 				20FBEAB81A6AB4BC0053B304 /* InactiveStar.png in Resources */,
 				20D310221A36DC4500999F7A /* bookstorelogo.jpg in Resources */,
@@ -345,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20FBEAD01A780CF00053B304 /* Rating.m in Sources */,
+				20FBEAE21A7BAF9C0053B304 /* BSAuthorTableViewCell.m in Sources */,
 				20862C451A0AAF60002FDC34 /* BookShop.xcdatamodeld in Sources */,
 				20FBEAA61A658B7B0053B304 /* BSGenreAndAuthorExpandebleTableViewController.m in Sources */,
 				20FBEAC71A780CA20053B304 /* User.m in Sources */,
@@ -354,9 +386,11 @@
 				20FBEAD41A7A23F80053B304 /* BSDBManager.m in Sources */,
 				20FBEABE1A6C416D0053B304 /* BSVoteViewController.m in Sources */,
 				20862C481A0AAF60002FDC34 /* BSSignInViewController.m in Sources */,
+				201BF2E21A8CD67A0096F1B0 /* BSWIDBViewController.m in Sources */,
 				20FBEAD71A7A25A90053B304 /* UsersAuthorRating.m in Sources */,
 				20D30FE71A15323000999F7A /* BSSignUpTableViewController.m in Sources */,
 				20FBEABB1A6C332B0053B304 /* BSAuthorViewController.m in Sources */,
+				201BF2E61A8D14910096F1B0 /* Genre.m in Sources */,
 				20862C3F1A0AAF60002FDC34 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

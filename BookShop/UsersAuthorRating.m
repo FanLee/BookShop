@@ -7,7 +7,14 @@
 //
 
 #import "UsersAuthorRating.h"
+#import "User.h"
+#import "Author.h"
 
 @implementation UsersAuthorRating
+
+@dynamic rate;
+@dynamic book;
+@dynamic user;
+@dynamic author;
 
 @end
