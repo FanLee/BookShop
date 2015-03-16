@@ -12,8 +12,7 @@
 
 @implementation UsersAuthorRating
 
-@dynamic rate;
-@dynamic book;
+@dynamic rating;
 @dynamic user;
 @dynamic author;
 

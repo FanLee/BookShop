@@ -17,11 +17,11 @@
 @property(nonatomic,retain)NSString *gender;
 @property(nonatomic,retain)NSString *name;
 @property(nonatomic,retain)NSData *portrait;
-@property(nonatomic,retain)NSSet *authorsBooks;
+@property(nonatomic,retain)NSSet *books;
 @property(nonatomic,retain)Genre *genre;
 @end
 
-@interface Author (CoreDataGeneratedAccessors)
+/*@interface Author (CoreDataGeneratedAccessors)
 
 - (void)addAuthorsBooksObject:(Book *)value;
-@end
+@end*/

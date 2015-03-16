@@ -13,7 +13,7 @@
 @class Author,Book,Genre;
 
 @interface Book : NSManagedObject
-@property(nonatomic,assign) NSNumber* bookID;
+@property(nonatomic,assign)NSNumber* bookID;
 @property(nonatomic,retain)Genre *genre;
 @property(nonatomic,retain)NSString *title;
 @property(nonatomic,retain)Author *author;

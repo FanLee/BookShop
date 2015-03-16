@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 @interface BSSignInViewController ()
 
-
 @end
 
 @implementation BSSignInViewController
@@ -26,11 +25,9 @@
     _signInButton.layer.cornerRadius = 5.0f;
     self.navigationController.navigationBar.hidden = YES;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
     [_scrollView setContentOffset:CGPointMake(0,155)animated:YES];
 }
@@ -40,24 +37,19 @@
     [_scrollView setContentOffset:CGPointMake(0,0)animated:YES];
     [self authentification];
 }
-
 -(IBAction)backgroundTouched:(id)sender{
     [_emailTextField resignFirstResponder];
     [_passTextField resignFirstResponder];
     [_scrollView setContentOffset:CGPointMake(0,0)animated:YES];
-    
 }
 -(BOOL)authentification{
     if (![_emailTextField.text isEqualToString:@""]&&![_passTextField.text isEqualToString:@""]) {
         BSDBManager* dbManager = [BSDBManager sharedInstance];
         BOOL aut = [dbManager authentification:_emailTextField.text password:_passTextField.text];
-        if(aut==YES)
-        {
+        if(aut==YES){
             AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-            //User* user;
-            //[dbManager getUserFromDB:_emailTextField.text];
             appDelegate.aplicationUser = [dbManager getUserFromDB:_emailTextField.text];
-            NSString* us= [NSString stringWithFormat:@"%@", appDelegate.aplicationUser.email];
+            //NSString* us= [NSString stringWithFormat:@"%@", appDelegate.aplicationUser.email];
             [self performSegueWithIdentifier:@"login" sender:self];
             [self.view endEditing:true];
             return true;

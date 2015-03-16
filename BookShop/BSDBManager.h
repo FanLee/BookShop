@@ -10,7 +10,7 @@
 #import "User.h"
 #import "Author.h"
 #import "Book.h"
-#import "Rating.h"
+//#import "Rating.h"
 #import "UsersAuthorRating.h"
 
 @interface BSDBManager : NSObject{
@@ -31,6 +31,13 @@
 -(void)saveChangesInDB;
 -(Author*)findAuthorByID:(NSNumber*)authorID;
 -(Book*)findBookByID:(NSNumber*)bookID;
+-(NSArray*)getAuthorsArray:(NSString*)authorsGenre;
+-(NSArray*)getBooksArray:(NSString*)authorsName;
+-(NSArray*)getEntityDataWithPredicate:(NSString *)entityName
+                                     :(NSString *)authorsName
+                                     :(NSString *)predicateParametr;
+-(NSArray*)getRateArray:(NSString*)authorsName;
+-(float)recalcRating:(NSString*)authorName;
 
 
 @end

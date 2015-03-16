@@ -18,6 +18,6 @@
 @dynamic gender;
 @dynamic genre;
 @dynamic portrait;
-@dynamic authorsBooks;
+@dynamic books;
 
 @end

@@ -18,10 +18,11 @@
 @property(nonatomic,strong)IBOutlet UIButton* starButton3;
 @property(nonatomic,strong)IBOutlet UIButton* starButton4;
 @property(nonatomic,strong)IBOutlet UIButton* starButton5;
+@property(nonatomic,strong)IBOutlet UILabel* ratingLabel;
 @property(nonatomic,strong) UIImage* activeStar;
 @property(nonatomic,strong) UIImage* inactiveStar;
 @property(nonatomic,strong) NSArray* buttonsArray;
-@property(nonatomic,assign) NSUInteger starRating;
+@property(nonatomic,assign) NSInteger starRating;
 @property(nonatomic,strong)Author *author;
 -(IBAction)starButtonAction:(id)sender;
 -(IBAction)saveRatingAction:(id)sender;

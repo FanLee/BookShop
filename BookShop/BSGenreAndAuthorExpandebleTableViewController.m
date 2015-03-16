@@ -15,24 +15,27 @@
 #import "BSDBManager.h"
 #import "BSAuthorViewController.h"
 #import "Genre.h"
-
+@class Author;
 @implementation BSGenreAndAuthorExpandebleTableViewController
-enum {
-    header1,
-    header2,
-    header3,
-};
+
 Author * currentAuthor;
+NSArray *genresArrayUnsort;
+NSArray *authorsArray;
+NSArray *genresArray;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    BSDBManager* dbManager = [BSDBManager sharedInstance];
+    genresArrayUnsort=[dbManager getEntityData:@"Genre"];
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"genreName" ascending:YES];
+    genresArray=[genresArrayUnsort sortedArrayUsingDescriptors:@[sortDescriptor]];
     
     if (!expandedSections)
     {
         expandedSections = [[NSMutableIndexSet alloc] init];
     }
-    
 }
 
 - (BOOL)tableView:(UITableView *)tableView canCollapseSection:(NSInteger)section
@@ -45,16 +48,28 @@ Author * currentAuthor;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return [genresArray count];
 }
-
+-(NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication]delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([self tableView:tableView canCollapseSection:section])
     {
         if ([expandedSections containsIndex:section])
         {
-            return 2; // return rows when expanded
+            // return rows when expanded
+            Genre* genre =[genresArray objectAtIndex:section];
+            NSString *genrename = genre.genreName;
+            BSDBManager* dbManager = [BSDBManager sharedInstance];
+            authorsArray=[dbManager getAuthorsArray:genrename];
+            return ([authorsArray count]+1);
         }
     }
     
@@ -65,16 +80,6 @@ Author * currentAuthor;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
-    //indexPath.section
-    //indexPath.row
-    
-    //indexPath.section
-    //genres
-    //rows
-    //autors
-    
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -83,55 +88,20 @@ Author * currentAuthor;
     // Configure the cell...
     
     if ([self tableView:tableView canCollapseSection:indexPath.section] && indexPath.row == 0) {
-        switch (indexPath.section) {
-            case header1: cell.textLabel.text=@"Horrors";return cell;
-            case header2: cell.textLabel.text=@"Detectives";return cell;
-            case header3: cell.textLabel.text=@"Adventures"; return cell;
-        }
-        // first row
+        //switch (indexPath.section) {
+        Genre *sectionGenre=[genresArray objectAtIndex:indexPath.section];
+        cell.textLabel.text=sectionGenre.genreName;
     } else {
-        if(indexPath.section==header1){
-            NSUInteger i=0;
+        if(indexPath.row>0){
+            NSIndexPath *index =[NSIndexPath indexPathForRow:0 inSection:indexPath.section];
             BSDBManager *dbManager = [BSDBManager sharedInstance];
-            NSArray *authorsHororsArray=dbManager.authors;
-            for (i=0;i<[authorsHororsArray count]; i++){
-                Author *author=[authorsHororsArray objectAtIndex:i];
-                if ([author.genre.genreName isEqualToString:@"Horrors"]){
-                    currentAuthor=author;
-                    NSString *authorText=[NSString stringWithFormat:@"%@",author.name];
-                    cell.textLabel.text = authorText;
-                    cell.accessoryView = nil;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                }
-            }
-        } else if (indexPath.section==header2){
-            NSUInteger i=0;
-            BSDBManager *dbManager = [BSDBManager sharedInstance];
-            NSArray *authorsHororsArray=dbManager.authors;
-            for (i=0;i<[authorsHororsArray count]; i++){
-                Author *author=[authorsHororsArray objectAtIndex:i];
-                if ([author.genre.genreName isEqualToString:@"Detectives"]){
-                    currentAuthor=author;
-                    NSString *authorText=[NSString stringWithFormat:@"%@",author.name];
-                    cell.textLabel.text = authorText;
-                    cell.accessoryView = nil;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                }
-            }
-        } else if (indexPath.section==header3){
-            NSUInteger i=0;
-            BSDBManager *dbManager = [BSDBManager sharedInstance];
-            NSArray *authorsHororsArray=dbManager.authors;
-            for (i=0;i<[authorsHororsArray count]; i++){
-                Author *author=[authorsHororsArray objectAtIndex:i];
-                if ([author.genre.genreName isEqualToString:@"Adventures"]){
-                    currentAuthor=author;
-                    NSString *authorText=[NSString stringWithFormat:@"%@",author.name];
-                    cell.textLabel.text = authorText;
-                    cell.accessoryView = nil;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                }
-            }
+            UITableViewCell *genresCell=[self tableView:tableView cellForRowAtIndexPath:index];
+            NSString *genrename=genresCell.textLabel.text;
+            authorsArray=[dbManager getAuthorsArray:genrename];
+            Author *authorInRow=[authorsArray objectAtIndex:(indexPath.row-1)];
+            cell.textLabel.text = authorInRow.name;
+            cell.accessoryView = nil;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
     return cell;
@@ -169,8 +139,6 @@ Author * currentAuthor;
                 [tmpArray addObject:tmpIndexPath];
             }
             
-            //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-            
             if (currentlyExpanded)
             {
                 [tableView deleteRowsAtIndexPaths:tmpArray
@@ -185,6 +153,7 @@ Author * currentAuthor;
                 
             }
         }else{
+            currentAuthor=[authorsArray objectAtIndex:indexPath.row-1];
             [self performSegueWithIdentifier:@"authorDetail" sender:self];
         }
         

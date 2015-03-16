@@ -13,9 +13,8 @@
 
 @interface UsersAuthorRating : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * rate;
-@property (nonatomic, retain) Book *book;
-@property (nonatomic, retain) User *user;
-@property (nonatomic, retain) Author *author;
+@property (nonatomic, retain) NSNumber * rating;
+@property (nonatomic, retain) NSString *user;
+@property (nonatomic, retain) NSString *author;
 
 @end

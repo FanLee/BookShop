@@ -8,6 +8,7 @@
 
 #import "BSDBManager.h"
 #import "AppDelegate.h"
+#import "UsersAuthorRating.h"
 
 @implementation BSDBManager
 
@@ -20,15 +21,6 @@
         return sharedInstance;
 }
 
--(void)updateTablesData
-{
-    _books = [self getEntityData:@"Book"];
-    _authors = [self getEntityData:@"Author"];
-    _users = [self getEntityData:@"User"];
-    _ratings=[self getEntityData:@"Rating"];
-    _usersAuthorRating=[self getEntityData:@"UsersAuthorRating"];
-}
-
 -(id)init
 {
     self = [super init];
@@ -36,13 +28,10 @@
     {
         AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
         context = appDelegate.managedObjectContext;
-        [self updateTablesData];
     }
     return self;
 }
-
--(NSArray*)getEntityData:(NSString *)entityName
-{
+-(NSArray*)getEntityData:(NSString *)entityName{
     NSError * error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
@@ -50,14 +39,70 @@
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     return fetchedObjects;
 }
+-(NSArray*)getAuthorsArray:(NSString*)authorsGenre {
+    NSError * error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Author" inManagedObjectContext:context];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"genre.genreName=%@",authorsGenre];
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+    
+}
+-(NSArray*)getBooksArray:(NSString*)authorsName {
+    NSError * error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Book" inManagedObjectContext:context];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"author.name=%@",authorsName];
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+    
+}
+-(NSArray*)getRateArray:(NSString*)authorsName {
+    NSError * error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"UsersAuthorRating" inManagedObjectContext:context];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"author=%@",authorsName];
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+    
+}
+
+-(NSArray*)getEntityDataWithPredicate:(NSString *)entityName
+                                     :(NSString *)predicateParametr1
+                                     :(NSString *)predicateParametr2{
+    NSError * error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"%@=%@",predicateParametr1,predicateParametr2];
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    return fetchedObjects;
+    
+}
+-(float)recalcRating:(NSString*)authorName{
+    NSArray *ratingArray = [self getRateArray:authorName];
+    NSInteger newRaring=0;
+    for (UsersAuthorRating *rate in ratingArray ) {
+        newRaring+=[rate.rating integerValue];
+    }
+    float  averageRating=(float)newRaring/[ratingArray count];
+    return averageRating;
+}
 
 -(void)newRateForAuthor:(Author*)author rate:(int)rate
 {
     AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    Rating *newRate = [NSEntityDescription insertNewObjectForEntityForName:@"Rating" inManagedObjectContext:context];
-    newRate.author = author;
-    newRate.user = appDelegate.aplicationUser;
-    newRate.rating = [[NSNumber numberWithInt:rate]integerValue];
+     UsersAuthorRating *newRate = [NSEntityDescription insertNewObjectForEntityForName:@"UsersAuthorRating" inManagedObjectContext:context];
+    newRate.author = author.name;
+    newRate.user = appDelegate.aplicationUser.email;
+    newRate.rating = [NSNumber numberWithInt:rate];
     [self saveChangesInDB];
 }
 -(User*)createNewUserWithUsername:(NSString*)username
@@ -80,6 +125,7 @@
     }
     return NO;
 }
+
 -(User*)getUserFromDB:(NSString*)userName{
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     user.email = userName;
@@ -121,7 +167,6 @@
 {
     AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     [appDelegate saveContext];
-    [self updateTablesData];
 }
 
 

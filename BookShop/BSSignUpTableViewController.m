@@ -8,6 +8,8 @@
 
 #import "BSSignUpTableViewController.h"
 #import "AppDelegate.h"
+#import "BSDBManager.h"
+
 
 @interface BSSignUpTableViewController ()
 
@@ -24,7 +26,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-    
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -40,7 +42,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     if (pickerView == _genderPicker){
-    return 2;
+        return 2;
     }else if(pickerView == _agePicker){
         return 5;
     }
@@ -77,12 +79,12 @@
             }
         }
     }
-     return 0;
+    return 0;
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     _genderPickerResult=[self pickerView:_genderPicker titleForRow:row forComponent:component];
+    //_agePickerResult=[NSNumber n _agePicker];
     _agePickerResult=[self pickerView:_agePicker titleForRow:row forComponent:component];
-    
 }
 -(NSManagedObjectContext *)managedObjectContext{
     NSManagedObjectContext *context = nil;
@@ -94,26 +96,30 @@
 }
 -(IBAction)signUpAction:(id)sender{
     if ([_passwordTextField.text isEqualToString:_confirmPasswordTextField.text]) {
-        
+        BSDBManager* dbManager = [BSDBManager sharedInstance];
+        NSArray *usersArray=[dbManager getEntityData:@"User"];
+        //NSInteger userMaxId=[usersArray count];
+        NSInteger greatingUserID = [usersArray count]+1;
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-        [newUser setValue:self.emailTextField.text forKey:@"email"];
-        [newUser setValue:self.passwordTextField.text forKey:@"password"];
-        [newUser setValue:self.firstNameTextField.text forKey:@"firstname"];
-        [newUser setValue:self.lastNameTextField.text forKey:@"lastname"];
+        [newUser setValue:_emailTextField.text forKey:@"email"];
+        [newUser setValue:_passwordTextField.text forKey:@"password"];
+        [newUser setValue:_firstNameTextField.text forKey:@"firstname"];
+        [newUser setValue:_lastNameTextField.text forKey:@"lastname"];
         [newUser setValue:_genderPickerResult forKey:@"gender"];
         [newUser setValue:_agePickerResult  forKey:@"age"];
+        [newUser setValue:[NSNumber numberWithInteger:greatingUserID] forKey:@"userID"];
         NSError *error = nil;
-        [self performSegueWithIdentifier:@"signedup" sender:self];
-
-    if (![context save:&error]) {
-        NSLog(@"Can't save! %@ %@", error,[error localizedDescription]);
-    }
-    
+        [self performSegueWithIdentifier:@"signedUp" sender:self];
+        
+        if (![context save:&error]) {
+            NSLog(@"Can't save! %@ %@", error,[error localizedDescription]);
+        }
+        
     }else{
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Attention" message:@"Password and Confirm password doesn't match" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
-    
+        
     }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPat{
@@ -123,67 +129,5 @@
     [_passwordTextField resignFirstResponder];
     [_confirmPasswordTextField resignFirstResponder];
 }
-
-
-
-/*-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 17;
-}
-*/
-
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

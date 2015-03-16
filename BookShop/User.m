@@ -18,6 +18,4 @@
 @dynamic lastname;
 @dynamic gender;
 @dynamic age;
-@dynamic usersRatings;
-@dynamic allAuthors;
 @end

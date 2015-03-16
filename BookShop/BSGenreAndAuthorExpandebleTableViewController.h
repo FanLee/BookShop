@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Author.h"
+//#import "BSDBManager.h"
 
 @interface BSGenreAndAuthorExpandebleTableViewController : UITableViewController
 {
     NSMutableIndexSet *expandedSections;
 }
-
 @end
 
 
