@@ -22,12 +22,8 @@
         <relationship name="authors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="genre" inverseEntity="Author" syncable="YES"/>
         <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="genre" inverseEntity="Book" syncable="YES"/>
     </entity>
-    <entity name="Rating" syncable="YES">
-        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="authorrating" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UsersAuthorRating" syncable="YES"/>
-    </entity>
     <entity name="User" syncable="YES">
-        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,8 +31,6 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="rating" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UsersAuthorRating" syncable="YES"/>
-        <relationship name="userbooks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" syncable="YES"/>
-        <relationship name="usertoauthor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Author" syncable="YES"/>
     </entity>
     <entity name="UsersAuthorRating" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,9 +40,8 @@
     <elements>
         <element name="Author" positionX="-54" positionY="45" width="128" height="163"/>
         <element name="Book" positionX="133" positionY="-270" width="128" height="103"/>
-        <element name="Rating" positionX="205" positionY="206" width="128" height="73"/>
-        <element name="User" positionX="-65" positionY="-171" width="128" height="193"/>
-        <element name="UsersAuthorRating" positionX="288" positionY="-45" width="128" height="88"/>
         <element name="Genre" positionX="331" positionY="-189" width="128" height="103"/>
+        <element name="User" positionX="-65" positionY="-171" width="128" height="163"/>
+        <element name="UsersAuthorRating" positionX="288" positionY="-45" width="128" height="88"/>
     </elements>
 </model>
