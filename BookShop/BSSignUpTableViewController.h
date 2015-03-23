@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface BSSignUpTableViewController : UITableViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 @property (nonatomic,strong) IBOutlet UITextField *firstNameTextField;
@@ -16,8 +17,9 @@
 @property (nonatomic,strong) IBOutlet UITextField *confirmPasswordTextField;
 @property (nonatomic,assign) IBOutlet UIPickerView *genderPicker;
 @property (nonatomic,assign) IBOutlet UIPickerView *agePicker;
-@property(nonatomic,strong)NSString *genderPickerResult;
-@property(nonatomic,strong)NSString *agePickerResult;
+@property (nonatomic,strong)NSString *genderPickerResult;
+@property (nonatomic,strong)NSString *agePickerResult;
+@property (nonatomic,retain)User *createdUser;
 -(IBAction)signUpAction:(id)sender;
 
 

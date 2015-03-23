@@ -89,15 +89,17 @@
 -(float)recalcRating:(NSString*)authorName{
     NSArray *ratingArray = [self getRateArray:authorName];
     NSInteger newRaring=0;
+    float  averageRating=0;
     for (UsersAuthorRating *rate in ratingArray ) {
         newRaring+=[rate.rating integerValue];
     }
-    float  averageRating=(float)newRaring/[ratingArray count];
-    return averageRating;
+    averageRating=(float)newRaring/[ratingArray count];
+    if (averageRating>=0&&averageRating<=5) {
+        return averageRating;
+    }else   return 0;
 }
 
--(void)newRateForAuthor:(Author*)author rate:(int)rate
-{
+-(void)newRateForAuthor:(Author*)author rate:(int)rate{
     AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
      UsersAuthorRating *newRate = [NSEntityDescription insertNewObjectForEntityForName:@"UsersAuthorRating" inManagedObjectContext:context];
     newRate.author = author.name;
@@ -105,8 +107,7 @@
     newRate.rating = [NSNumber numberWithInt:rate];
     [self saveChangesInDB];
 }
--(User*)createNewUserWithUsername:(NSString*)username
-{
+-(User*)createNewUserWithUsername:(NSString*)username{
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     user.email = username;
     [self saveChangesInDB];
@@ -127,8 +128,8 @@
 }
 
 -(User*)getUserFromDB:(NSString*)userName{
-    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-    user.email = userName;
+    User *user;// = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+    //user.email = userName;
     NSError * error;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];

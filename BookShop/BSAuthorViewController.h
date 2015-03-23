@@ -29,6 +29,6 @@
 @property(nonatomic,strong) UIImage* inactiveStar;
 @property(nonatomic,strong) NSArray* buttonsArray;
 -(IBAction)starButton:(id)sender;
-@property(nonatomic,assign)NSUInteger authorsRating;
+@property(nonatomic,assign)NSInteger authorsRating;
 @property(nonatomic,weak)id delegate;
 @end

@@ -88,7 +88,6 @@ NSArray *genresArray;
     // Configure the cell...
     
     if ([self tableView:tableView canCollapseSection:indexPath.section] && indexPath.row == 0) {
-        //switch (indexPath.section) {
         Genre *sectionGenre=[genresArray objectAtIndex:indexPath.section];
         cell.textLabel.text=sectionGenre.genreName;
     } else {

@@ -12,7 +12,7 @@
 
 @interface User : NSManagedObject
 
-@property(nonatomic,assign)NSString *age;
+@property(nonatomic,assign)NSNumber *age;
 @property(nonatomic,retain)NSString *email;
 @property(nonatomic,retain)NSString *firstname;
 @property(nonatomic,retain)NSString *gender;

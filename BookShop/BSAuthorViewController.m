@@ -27,6 +27,8 @@ float rating;
     _authorGenderLabel.text=_author.gender;
     BSDBManager* dbManager = [BSDBManager sharedInstance];
     booksArray=[dbManager getBooksArray:_author.name];
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    booksArray=[booksArray sortedArrayUsingDescriptors:@[sortDescriptor]];
     rating= [dbManager recalcRating:_author.name];
     _ratingLabel.text=[NSString stringWithFormat:@"%.02f",rating];
     _activeStar=[UIImage imageNamed:@"ActiveStar.png"];
@@ -35,12 +37,11 @@ float rating;
     
 }
 -(void)viewWillAppear:(BOOL)animated{
-     BSDBManager* dbManager = [BSDBManager sharedInstance];
-     _ratingLabel.text=[NSString stringWithFormat:@"%.02f",[dbManager recalcRating:_author.name]];
+    BSDBManager* dbManager = [BSDBManager sharedInstance];
+    _ratingLabel.text=[NSString stringWithFormat:@"%.02f",[dbManager recalcRating:_author.name]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(IBAction)starButton:(id)sender{

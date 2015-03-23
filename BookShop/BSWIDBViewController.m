@@ -49,7 +49,7 @@
     user1.firstname = @"f";
     user1.lastname = @"l";
     user1.gender = @"Male";
-    user1.age=@"25";
+    user1.age=@25;
     
     Book *book1 = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:context];
     Book *book2 = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:context];

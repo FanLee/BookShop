@@ -9,6 +9,7 @@
 #import "BSSignUpTableViewController.h"
 #import "AppDelegate.h"
 #import "BSDBManager.h"
+#import "User.h"
 
 
 @interface BSSignUpTableViewController ()
@@ -17,6 +18,7 @@
 @end
 
 @implementation BSSignUpTableViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -83,7 +85,6 @@
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     _genderPickerResult=[self pickerView:_genderPicker titleForRow:row forComponent:component];
-    //_agePickerResult=[NSNumber n _agePicker];
     _agePickerResult=[self pickerView:_agePicker titleForRow:row forComponent:component];
 }
 -(NSManagedObjectContext *)managedObjectContext{
@@ -97,9 +98,12 @@
 -(IBAction)signUpAction:(id)sender{
     if ([_passwordTextField.text isEqualToString:_confirmPasswordTextField.text]) {
         BSDBManager* dbManager = [BSDBManager sharedInstance];
+        AppDelegate * appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
         NSArray *usersArray=[dbManager getEntityData:@"User"];
-        //NSInteger userMaxId=[usersArray count];
         NSInteger greatingUserID = [usersArray count]+1;
+        NSNumberFormatter *formatter= [[NSNumberFormatter alloc]init];
+        formatter.numberStyle=NSNumberFormatterDecimalStyle;
+        NSNumber *ageNumber=[formatter numberFromString:_agePickerResult];
         NSManagedObjectContext *context = [self managedObjectContext];
         NSManagedObject *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
         [newUser setValue:_emailTextField.text forKey:@"email"];
@@ -107,9 +111,11 @@
         [newUser setValue:_firstNameTextField.text forKey:@"firstname"];
         [newUser setValue:_lastNameTextField.text forKey:@"lastname"];
         [newUser setValue:_genderPickerResult forKey:@"gender"];
-        [newUser setValue:_agePickerResult  forKey:@"age"];
+        [newUser setValue:ageNumber  forKey:@"age"];
         [newUser setValue:[NSNumber numberWithInteger:greatingUserID] forKey:@"userID"];
         NSError *error = nil;
+        _createdUser=[dbManager getUserFromDB:_emailTextField.text];
+        appDelegate.aplicationUser=_createdUser;
         [self performSegueWithIdentifier:@"signedUp" sender:self];
         
         if (![context save:&error]) {

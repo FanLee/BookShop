@@ -20,19 +20,18 @@
 
 @implementation BSVoteViewController
 
-
+float rating;
 - (void)viewDidLoad {
     [super viewDidLoad];
     BSDBManager *dbManager = [BSDBManager sharedInstance];
+    rating=[dbManager recalcRating:_author.name];
     _activeStar=[UIImage imageNamed:@"ActiveStar.png"];
     _inactiveStar=[UIImage imageNamed:@"InActiveStar.png"];
     _buttonsArray=[[NSArray alloc]initWithObjects:_starButton1,_starButton2,_starButton3,_starButton4,_starButton5, nil];
+    [self determineButtonForRating:rating];
     _starRating = 0;
-    _ratingLabel.text=[NSString stringWithFormat:@"%.02f",[dbManager recalcRating:_author.name]];
+    _ratingLabel.text=[NSString stringWithFormat:@"%.02f",rating];
 }
-/*- (void)viewWillDisappear:(BOOL)animated{
-    [self performSegueWithIdentifier:@"moveToVoteViewController" sender:self];
-}*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -50,6 +49,20 @@
         _starRating=5;
     }
 }
+-(void)determineButtonForRating:(float)rating{
+    if (rating>=1&&rating<2) {
+        [self changeButtonImage:_starButton1];
+    }else if (rating>=2&&rating<3){
+        [self changeButtonImage:_starButton2];
+    }else if (rating>=3&&rating<4){
+        [self changeButtonImage:_starButton3];
+    }else if (rating>=4&&rating<5){
+        [self changeButtonImage:_starButton4];
+    }else if (rating>=5){
+        [self changeButtonImage:_starButton5];
+    }
+}
+
 -(void)changeButtonImage:(UIButton*)starButton{
     NSUInteger index = [_buttonsArray indexOfObject:starButton];
     for (int i=0; i<[_buttonsArray count]; i++) {
@@ -75,11 +88,13 @@
 -(void)addRating:(int)rating{
     BSDBManager *dbManager = [BSDBManager sharedInstance];
     [dbManager newRateForAuthor:_author rate:rating];
-    _ratingLabel.text=[NSString stringWithFormat:@"%.02f",[dbManager recalcRating:_author.name]];
+    float recalcResult=[dbManager recalcRating:_author.name];
+    _ratingLabel.text=[NSString stringWithFormat:@"%.02f",recalcResult];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue  sender:(id)sender{
     BSAuthorViewController * vc= segue.destinationViewController;
     vc.ratingLabel.text = _ratingLabel.text;
+    vc.authorsRating=_starRating;
 }
 
 
